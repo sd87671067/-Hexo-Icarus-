@@ -1,0 +1,91 @@
+/* ==========================================
+   卡片式页脚
+   ========================================== */
+
+/* 删除页脚原有内容 */
+.footer > * {
+    display: none !important;
+}
+
+/* 页脚容器 */
+.footer {
+    padding: 2rem 1rem !important;
+    background: #f5f5f5 !important;
+}
+
+[data-theme="dark"] .footer {
+    background: #0d1117 !important;
+}
+
+/* 创建卡片效果 */
+.footer::before {
+    content: '' !important;
+    display: block !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .footer::before {
+    background: #161b22 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 文字和爱心 */
+.footer::after {
+    content: '用技术压制负面情绪，后退一步研究市场 ❤️' !important;
+    display: block !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: #333 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 2rem !important;
+}
+
+[data-theme="dark"] .footer::after {
+    color: #e6edf3 !important;
+}
+
+/* 爱心跳动动画 - 使用伪元素的伪元素不可行，改用CSS变量 */
+.footer {
+    position: relative !important;
+}
+
+.footer::after {
+    animation: textWithHeart 1.2s ease-in-out infinite !important;
+}
+
+@keyframes textWithHeart {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    10%, 30% {
+        transform: translate(-50%, -50%) scale(0.98);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* 悬停效果 */
+.footer::before {
+    cursor: default !important;
+}
+
+.footer:hover::before {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="dark"] .footer:hover::before {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}

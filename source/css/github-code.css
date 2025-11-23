@@ -1,0 +1,146 @@
+/* ==========================================
+   GitHub 风格代码块
+   ========================================== */
+
+/* 代码块容器 */
+pre {
+    background: #f6f8fa !important;
+    border: 1px solid #e1e4e8 !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    overflow: auto !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+}
+
+/* 行内代码 */
+code {
+    background: rgba(175, 184, 193, 0.2) !important;
+    padding: 0.2em 0.4em !important;
+    margin: 0 !important;
+    font-size: 85% !important;
+    border-radius: 3px !important;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+}
+
+pre code {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 代码高亮 - GitHub主题色 */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6a737d !important;
+}
+
+.token.punctuation {
+    color: #24292e !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #005cc5 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #032f62 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #d73a49 !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #d73a49 !important;
+}
+
+.token.function,
+.token.class-name {
+    color: #6f42c1 !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e36209 !important;
+}
+
+/* 夜间模式代码块 */
+[data-theme="dark"] pre {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] code {
+    background: rgba(110, 118, 129, 0.2) !important;
+    color: #e1e4e8 !important;
+}
+
+[data-theme="dark"] .token.comment {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .token.string {
+    color: #a5d6ff !important;
+}
+
+[data-theme="dark"] .token.keyword {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .token.function {
+    color: #d2a8ff !important;
+}
+
+/* 代码块行号 */
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid #e1e4e8 !important;
+}
+
+[data-theme="dark"] .line-numbers .line-numbers-rows {
+    border-right: 1px solid #30363d !important;
+}
+
+/* 复制按钮 */
+.code-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    background: #f0f1f3;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+pre:hover .code-copy-btn {
+    opacity: 1;
+}
+
+.code-copy-btn:hover {
+    background: #e1e4e8;
+}

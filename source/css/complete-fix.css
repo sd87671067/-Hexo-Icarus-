@@ -1,0 +1,95 @@
+/* 完整修复样式 */
+
+/* 1. 代码块样式 - GitHub风格，绝对无阴影 */
+pre, pre *, code, code *, 
+.highlight, .highlight *,
+figure.highlight, figure.highlight *,
+.hljs, .hljs * {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+pre, .highlight pre, figure.highlight pre {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    margin: 16px 0 !important;
+    overflow-x: auto !important;
+}
+
+[data-theme="dark"] pre,
+[data-theme="dark"] .highlight pre,
+[data-theme="dark"] figure.highlight pre {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+/* 2. Profile Widget统计图标 */
+.widget[data-type="profile"] .level-item::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 8px;
+}
+
+.widget[data-type="profile"] .level-item:nth-child(1)::before {
+    content: "📝";
+    font-size: 24px;
+}
+
+.widget[data-type="profile"] .level-item:nth-child(2)::before {
+    content: "📁";
+    font-size: 24px;
+}
+
+.widget[data-type="profile"] .level-item:nth-child(3)::before {
+    content: "🏷️";
+    font-size: 24px;
+}
+
+/* 3. 页脚社交图标 */
+.footer .level-item a[href*="github"]::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>') no-repeat center;
+}
+
+.footer .level-item a[href*="mailto"]::before {
+    content: "✉️";
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.footer .level-item a[href*="telegram"], 
+.footer .level-item a[href*="t.me"]::before {
+    content: "✈️";
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+/* 4. 隐藏所有访客记录 */
+*:contains("访客"),
+*:contains("Visitor"),
+.busuanzi,
+#busuanzi_container_site_pv,
+#busuanzi_container_site_uv {
+    display: none !important;
+}
+
+/* 5. 确保横向布局 */
+.widget .level {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.widget .level-item {
+    flex: 1 !important;
+    text-align: center !important;
+}

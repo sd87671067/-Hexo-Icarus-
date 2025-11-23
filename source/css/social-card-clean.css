@@ -1,0 +1,236 @@
+/* ==========================================
+   纯社交图标卡片
+   ========================================== */
+
+/* 社交卡片容器 */
+.social-card {
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    padding: 2rem !important;
+    margin: 2rem auto !important;
+    max-width: 800px !important;
+    text-align: center !important;
+}
+
+/* 社交链接容器 */
+.social-links {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2.5rem !important;
+}
+
+/* 社交图标按钮 */
+.social-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background: #f8f9fa !important;
+    border: 2px solid #e5e5e5 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    position: relative !important;
+}
+
+.social-link svg {
+    width: 28px !important;
+    height: 28px !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* 悬停效果 - 先缩小再放大 */
+.social-link:hover {
+    transform: scale(1.15) translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.social-link:hover svg {
+    transform: rotate(5deg) !important;
+}
+
+/* 点击效果 */
+.social-link:active {
+    transform: scale(0.95) translateY(0) !important;
+}
+
+/* GitHub - 黑色 */
+.social-link[href*="github"]:hover {
+    background: #24292e !important;
+    border-color: #24292e !important;
+    color: white !important;
+}
+
+/* Email - 红色 */
+.social-link[href*="mailto"]:hover {
+    background: #ea4335 !important;
+    border-color: #ea4335 !important;
+    color: white !important;
+}
+
+/* Telegram - 蓝色 */
+.social-link[href*="t.me"]:hover {
+    background: #0088cc !important;
+    border-color: #0088cc !important;
+    color: white !important;
+}
+
+/* 添加小标签（可选）*/
+.social-link::after {
+    content: attr(title) !important;
+    position: absolute !important;
+    bottom: -30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 0.75rem !important;
+    color: #666 !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    white-space: nowrap !important;
+}
+
+.social-link:hover::after {
+    opacity: 1 !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .social-card {
+    background: #161b22 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .social-link {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] .social-link::after {
+    color: #8b949e !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1.5rem !important;
+    }
+    
+    .social-link {
+        width: 52px !important;
+        height: 52px !important;
+    }
+    
+    .social-link svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+/* 内容文章页面 - 去除卡片样式 */
+.post article,
+.post .article,
+body.post article,
+body.post .article-content,
+.article-page article {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.post .card-content,
+body.post .card-content,
+.article-page .card-content {
+    background: transparent !important;
+    padding: 2rem 0 !important;
+}
+
+/* 文章内容样式优化 */
+.post article h1,
+.post article h2,
+.post article h3,
+.post article h4 {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+}
+
+.post article p {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.8 !important;
+    color: #444 !important;
+    font-size: 1rem !important;
+}
+
+.post article ul,
+.post article ol {
+    margin-bottom: 1.5rem !important;
+    padding-left: 2rem !important;
+}
+
+.post article li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+.post article blockquote {
+    border-left: 4px solid #667eea !important;
+    padding-left: 1rem !important;
+    margin: 1.5rem 0 !important;
+    color: #666 !important;
+    font-style: italic !important;
+}
+
+/* 夜间模式文章 */
+[data-theme="dark"] .post article h1,
+[data-theme="dark"] .post article h2,
+[data-theme="dark"] .post article h3 {
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] .post article p {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .post article blockquote {
+    color: #8b949e !important;
+    border-left-color: #58a6ff !important;
+}
+
+/* 主页卡片保持动画 */
+.index .card:not(.social-card),
+.home .card:not(.social-card),
+body:not(.post) .card:not(.social-card) {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+}
+
+.index .card:not(.social-card):hover,
+.home .card:not(.social-card):hover,
+body:not(.post) .card:not(.social-card):hover {
+    animation: cardBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+@keyframes cardBounce {
+    0% { transform: scale(1); }
+    35% { transform: scale(0.97); }
+    100% { transform: scale(1.03); }
+}
+
+.index .card:not(.social-card):active,
+.home .card:not(.social-card):active,
+body:not(.post) .card:not(.social-card):active {
+    animation: cardClick 0.3s ease !important;
+}
+
+@keyframes cardClick {
+    0% { transform: scale(1.03); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}

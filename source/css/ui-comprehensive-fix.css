@@ -1,0 +1,153 @@
+/* ==========================================
+   1. 导航栏修复 (强制显示汉堡按钮)
+   ========================================== */
+.navbar {
+    z-index: 1000 !important;
+    min-height: 3.5rem !important;
+    padding: 0 1rem !important;
+    background: var(--card-bg, #fff) !important;
+}
+
+/* 强制显示汉堡按钮 - 覆盖所有可能的隐藏规则 */
+.navbar-burger {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 3.5rem !important;
+    width: 3.5rem !important;
+    margin-left: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+}
+
+/* 汉堡图标线条颜色 */
+.navbar-burger span {
+    height: 2px !important;
+    width: 20px !important;
+    background-color: currentColor !important; /* 跟随文字颜色 */
+}
+
+/* 隐藏默认的横向菜单 */
+.navbar-start, .navbar-end {
+    display: none !important;
+}
+
+/* 下拉菜单样式 - 稍大字体 */
+.navbar-menu {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: var(--card-bg, #fff) !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+    padding: 0 !important;
+    width: 280px !important; /* 适中宽度 */
+    
+    /* 动画属性 */
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease !important;
+    border-bottom-right-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+
+.navbar-menu.is-active {
+    max-height: 500px !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* 菜单项优化 */
+.navbar-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1.05rem !important;
+    color: inherit !important;
+}
+
+.navbar-item i {
+    width: 1.5rem !important;
+    text-align: center !important;
+    margin-right: 0.8rem !important;
+}
+
+/* ==========================================
+   2. 右下角浮动按钮 (回到顶部 + 夜间模式)
+   ========================================== */
+
+/* 按钮容器 (用于统一管理隐藏逻辑) */
+.floating-buttons-container {
+    position: fixed !important;
+    right: 1.5rem !important;
+    bottom: 2rem !important;
+    z-index: 999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important; /* 按钮间距 */
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* 滚动时隐藏的状态 */
+.floating-buttons-container.is-hidden {
+    transform: translateX(100px) !important; /* 向右滑出 */
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 通用按钮样式 */
+.float-btn {
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    font-size: 1.2rem !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+/* 悬停效果 */
+.float-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* --- 颜色逻辑修复 --- */
+
+/* 默认 (日间模式): 白底黑字 */
+.float-btn {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* 夜间模式激活时: 深灰底白字 */
+[data-theme="dark"] .float-btn {
+    background-color: #2d333b !important; /* 深色背景 */
+    color: #e6edf3 !important;             /* 亮色图标 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+
+/* 夜间模式下悬停 */
+[data-theme="dark"] .float-btn:hover {
+    background-color: #444c56 !important;
+    color: #58a6ff !important; /* 蓝色高亮 */
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        width: 100% !important;
+    }
+    .floating-buttons-container {
+        right: 1rem !important;
+        bottom: 1.5rem !important;
+    }
+}

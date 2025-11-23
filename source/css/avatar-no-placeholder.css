@@ -1,0 +1,78 @@
+/* ==========================================
+   移除所有头像占位符
+   ========================================== */
+
+/* 移除所有占位符和背景 */
+.avatar,
+.media-left,
+.media-left .image,
+.navbar-brand .image,
+.image,
+img,
+img.avatar {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* 移除加载动画类 */
+.avatar-loading,
+.avatar-placeholder,
+.image-loading,
+.shimmer,
+.skeleton {
+    display: none !important;
+}
+
+/* 图片默认透明，加载后显示 */
+img {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+img.loaded,
+img[src]:not([src=""]):not([src="#"]) {
+    opacity: 1;
+}
+
+/* 移除错误状态 */
+.avatar-error,
+.image-error {
+    display: none !important;
+}
+
+.avatar-error::after,
+.avatar-error::before,
+.image-error::after,
+.image-error::before {
+    display: none !important;
+}
+
+/* 确保没有伪元素占位符 */
+.avatar::before,
+.avatar::after,
+.media-left::before,
+.media-left::after,
+.image::before,
+.image::after {
+    display: none !important;
+}
+
+/* 移除所有可能的占位符动画 */
+@keyframes shimmer {
+    to { background-position: 0 0; }
+}
+
+@keyframes skeleton {
+    to { opacity: 1; }
+}
+
+@keyframes placeholder {
+    to { opacity: 1; }
+}
+
+.shimmer,
+.skeleton,
+.placeholder {
+    animation: none !important;
+}

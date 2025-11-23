@@ -1,0 +1,210 @@
+/* ==========================================
+   GitHub 代码块样式 - 最高优先级版本
+   ========================================== */
+
+/* 基础重置 - 使用多重选择器提高优先级 */
+html body pre,
+html body .highlight pre,
+html body figure.highlight pre,
+html body pre[class*="language-"],
+html body .content pre,
+html body article pre {
+    background: #f6f8fa !important;
+    background-color: #f6f8fa !important;
+    border: 1px solid #d1d5da !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    overflow-x: auto !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Monaco, "Courier New", monospace !important;
+    margin: 1em 0 !important;
+    color: #24292e !important;
+}
+
+/* 代码块内的code标签 */
+html body pre code,
+html body .highlight pre code,
+html body pre[class*="language-"] code {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #24292e !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* 行内代码 */
+html body code:not(pre code),
+html body :not(pre) > code {
+    background: rgba(27, 31, 35, 0.05) !important;
+    background-color: rgba(27, 31, 35, 0.05) !important;
+    padding: 0.2em 0.4em !important;
+    margin: 0 !important;
+    font-size: 85% !important;
+    border-radius: 3px !important;
+    color: #24292e !important;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Monaco, "Courier New", monospace !important;
+}
+
+/* 语法高亮 - GitHub风格 */
+html body .token.comment,
+html body .token.prolog,
+html body .token.doctype,
+html body .token.cdata {
+    color: #6a737d !important;
+}
+
+html body .token.punctuation {
+    color: #24292e !important;
+}
+
+html body .token.property,
+html body .token.tag,
+html body .token.boolean,
+html body .token.number,
+html body .token.constant,
+html body .token.symbol {
+    color: #005cc5 !important;
+}
+
+html body .token.selector,
+html body .token.attr-name,
+html body .token.string,
+html body .token.char,
+html body .token.builtin {
+    color: #032f62 !important;
+}
+
+html body .token.operator,
+html body .token.entity,
+html body .token.url {
+    color: #d73a49 !important;
+}
+
+html body .token.atrule,
+html body .token.attr-value,
+html body .token.keyword {
+    color: #d73a49 !important;
+}
+
+html body .token.function,
+html body .token.class-name {
+    color: #6f42c1 !important;
+}
+
+html body .token.regex,
+html body .token.important,
+html body .token.variable {
+    color: #e36209 !important;
+}
+
+/* Highlight.js 样式覆盖 */
+html body .hljs {
+    background: #f6f8fa !important;
+    color: #24292e !important;
+}
+
+html body .hljs-comment,
+html body .hljs-quote {
+    color: #6a737d !important;
+}
+
+html body .hljs-keyword,
+html body .hljs-selector-tag,
+html body .hljs-addition {
+    color: #d73a49 !important;
+}
+
+html body .hljs-number,
+html body .hljs-string,
+html body .hljs-meta .hljs-string,
+html body .hljs-literal,
+html body .hljs-doctag,
+html body .hljs-regexp {
+    color: #032f62 !important;
+}
+
+html body .hljs-title,
+html body .hljs-section,
+html body .hljs-name,
+html body .hljs-selector-id,
+html body .hljs-selector-class {
+    color: #6f42c1 !important;
+}
+
+html body .hljs-attr,
+html body .hljs-attribute,
+html body .hljs-variable,
+html body .hljs-template-variable,
+html body .hljs-class .hljs-title,
+html body .hljs-type {
+    color: #e36209 !important;
+}
+
+/* 夜间模式代码块 */
+html[data-theme="dark"] body pre,
+html[data-theme="dark"] body .highlight pre,
+html[data-theme="dark"] body figure.highlight pre,
+html[data-theme="dark"] body pre[class*="language-"] {
+    background: #0d1117 !important;
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+html[data-theme="dark"] body pre code,
+html[data-theme="dark"] body .highlight pre code {
+    color: #c9d1d9 !important;
+    background: transparent !important;
+}
+
+html[data-theme="dark"] body code:not(pre code),
+html[data-theme="dark"] body :not(pre) > code {
+    background: rgba(110, 118, 129, 0.4) !important;
+    background-color: rgba(110, 118, 129, 0.4) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 夜间模式语法高亮 */
+html[data-theme="dark"] body .token.comment {
+    color: #8b949e !important;
+}
+
+html[data-theme="dark"] body .token.string {
+    color: #a5d6ff !important;
+}
+
+html[data-theme="dark"] body .token.keyword {
+    color: #ff7b72 !important;
+}
+
+html[data-theme="dark"] body .token.function {
+    color: #d2a8ff !important;
+}
+
+html[data-theme="dark"] body .token.number {
+    color: #79c0ff !important;
+}
+
+/* 移除其他主题的样式 */
+.highlight,
+figure.highlight {
+    background: transparent !important;
+    margin: 0 !important;
+}
+
+/* 确保代码块容器不影响样式 */
+.content pre,
+article pre,
+.post-content pre {
+    background: #f6f8fa !important;
+}
+
+[data-theme="dark"] .content pre,
+[data-theme="dark"] article pre,
+[data-theme="dark"] .post-content pre {
+    background: #0d1117 !important;
+}

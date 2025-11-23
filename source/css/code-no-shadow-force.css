@@ -1,0 +1,81 @@
+/* ==========================================
+   强制移除所有代码块阴影
+   ========================================== */
+
+/* 移除所有可能的阴影 - 最高优先级 */
+pre,
+pre *,
+code,
+code *,
+.highlight,
+.highlight *,
+figure.highlight,
+figure.highlight *,
+.hljs,
+.hljs *,
+.code-copy-btn,
+.code-wrapper,
+.code-container {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* 夜间模式特别处理 */
+[data-theme="dark"] pre,
+[data-theme="dark"] pre *,
+[data-theme="dark"] code,
+[data-theme="dark"] code *,
+[data-theme="dark"] .highlight,
+[data-theme="dark"] .highlight *,
+[data-theme="dark"] figure.highlight,
+[data-theme="dark"] figure.highlight *,
+[data-theme="dark"] .hljs,
+[data-theme="dark"] .hljs *,
+[data-theme="dark"] .code-copy-btn {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* GitHub风格代码块 - 无阴影 */
+pre,
+.highlight pre,
+figure.highlight pre {
+    background: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] pre,
+[data-theme="dark"] .highlight pre,
+[data-theme="dark"] figure.highlight pre {
+    background: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    box-shadow: none !important;
+}
+
+/* 确保覆盖所有第三方样式 */
+.content pre,
+.content code,
+article pre,
+article code,
+.post pre,
+.post code {
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .content pre,
+[data-theme="dark"] .content code,
+[data-theme="dark"] article pre,
+[data-theme="dark"] article code,
+[data-theme="dark"] .post pre,
+[data-theme="dark"] .post code {
+    box-shadow: none !important;
+}

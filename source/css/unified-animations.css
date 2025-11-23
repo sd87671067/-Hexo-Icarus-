@@ -1,0 +1,283 @@
+/* ==========================================
+   统一全站动画效果
+   ========================================== */
+
+/* 定义动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 页面整体加载 */
+body {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* 导航栏 */
+.navbar {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* ==========================================
+   统一的卡片动画（分类页面风格）
+   ========================================== */
+
+/* 所有卡片使用相同动画 */
+.card,
+.widget,
+article.card,
+article.media,
+.media,
+.box,
+.panel,
+.message,
+.notification {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: calc(var(--card-index, 0) * 0.1s);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 设置动画延迟 */
+.card:nth-child(1),
+.widget:nth-child(1),
+article:nth-child(1) {
+    --card-index: 1;
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2),
+.widget:nth-child(2),
+article:nth-child(2) {
+    --card-index: 2;
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3),
+.widget:nth-child(3),
+article:nth-child(3) {
+    --card-index: 3;
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(4),
+.widget:nth-child(4),
+article:nth-child(4) {
+    --card-index: 4;
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(5),
+.widget:nth-child(5),
+article:nth-child(5) {
+    --card-index: 5;
+    animation-delay: 0.5s;
+}
+
+.card:nth-child(n+6),
+.widget:nth-child(n+6),
+article:nth-child(n+6) {
+    --card-index: 6;
+    animation-delay: 0.6s;
+}
+
+/* 侧边栏 */
+.sidebar,
+aside {
+    animation: slideInRight 0.7s ease-out;
+}
+
+/* 页脚 */
+footer,
+.footer {
+    animation: fadeInUp 0.8s ease-out;
+    animation-delay: 0.4s;
+}
+
+/* ==========================================
+   悬停效果（统一）
+   ========================================== */
+
+.card:hover,
+.widget:hover,
+article.card:hover,
+article.media:hover,
+.media:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .widget:hover,
+[data-theme="dark"] article.card:hover,
+[data-theme="dark"] article.media:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ==========================================
+   夜间模式样式（确保正确）
+   ========================================== */
+
+/* 夜间模式背景 */
+[data-theme="dark"] body {
+    background: #0a0e1a !important;
+    color: #c9d1d9 !important;
+}
+
+/* 夜间模式导航栏 */
+[data-theme="dark"] .navbar {
+    background: rgba(13, 17, 23, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .navbar-item,
+[data-theme="dark"] .navbar-link {
+    color: #c9d1d9 !important;
+}
+
+/* 夜间模式卡片 */
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget,
+[data-theme="dark"] article {
+    background: rgba(22, 27, 34, 0.95) !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+/* ==========================================
+   夜间模式切换按钮
+   ========================================== */
+
+.dark-mode-toggle {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 3px solid rgba(255, 255, 255, 0.9) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 999999 !important;
+    opacity: 0 !important;
+    transform: translateY(100px) scale(0.8) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: none !important;
+}
+
+/* 显示状态 */
+.dark-mode-toggle.visible {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: all !important;
+}
+
+/* 夜间模式按钮样式 */
+[data-theme="dark"] .dark-mode-toggle {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0a0e1a 100%) !important;
+    border: 3px solid rgba(88, 166, 255, 0.6) !important;
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3) !important;
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(0) scale(1.1) rotate(15deg) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode-toggle:active {
+    transform: translateY(0) scale(0.95) !important;
+}
+
+.dark-mode-toggle svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* 提示消息 */
+.theme-toast {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 999998;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: toastShow 2s ease;
+}
+
+@keyframes toastShow {
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px);
+    }
+    20% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+    80% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(-20px);
+    }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+    
+    .card,
+    .widget,
+    article {
+        animation-duration: 0.4s;
+    }
+}

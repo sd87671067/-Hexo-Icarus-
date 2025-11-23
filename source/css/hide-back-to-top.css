@@ -1,0 +1,43 @@
+/* ==========================================
+   隐藏回到顶部按钮
+   ========================================== */
+
+/* 删除回到顶部按钮 */
+.back-to-top,
+.back-top,
+.backtop,
+.go-top,
+.to-top,
+#back-to-top,
+#backTop,
+.scroll-top,
+.scroll-to-top,
+button[aria-label*="top"],
+button[aria-label*="Top"],
+a[href="#top"],
+.fab-button,
+.floating-button:not(.dark-mode-toggle),
+[class*="back"][class*="top"],
+[id*="back"][id*="top"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* 确保夜间模式按钮不被隐藏 */
+.dark-mode-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* 删除可能的fixed定位按钮（排除夜间模式按钮） */
+button[style*="position: fixed"]:not(.dark-mode-toggle),
+a[style*="position: fixed"]:not(.dark-mode-toggle a),
+div[style*="position: fixed"]:not(.dark-mode-toggle):has(svg):not(:has(.navbar-toggle-icon)) {
+    display: none !important;
+}

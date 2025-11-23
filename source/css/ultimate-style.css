@@ -1,0 +1,408 @@
+/* ==========================================
+   终极优化样式
+   ========================================== */
+
+/* ========== 主页卡片 - 极度慢动画 ========== */
+
+.index .card:not(.social-card),
+.home .card:not(.social-card),
+body:not(.post) .card:not(.social-card):not(article .card) {
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    margin-bottom: 1.5rem !important;
+    cursor: pointer !important;
+    transform: scale(1) !important;
+    /* 极度慢：2秒悬停动画 */
+    transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 1s ease !important;
+}
+
+/* 悬停 - 极度慢缩小再极度慢放大 */
+.index .card:not(.social-card):hover,
+.home .card:not(.social-card):hover,
+body:not(.post) .card:not(.social-card):not(article .card):hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    /* 极度慢：2.5秒 */
+    transition: transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 1s ease !important;
+}
+
+/* 点击 - 放大效果 */
+.index .card:not(.social-card):active,
+.home .card:not(.social-card):active,
+body:not(.post) .card:not(.social-card):not(article .card):active {
+    transform: scale(1.06) !important;
+    transition: transform 0.15s ease-out !important;
+}
+
+/* 夜间模式卡片 */
+[data-theme="dark"] .index .card:not(.social-card),
+[data-theme="dark"] .home .card:not(.social-card) {
+    background: #161b22 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .index .card:not(.social-card):hover,
+[data-theme="dark"] .home .card:not(.social-card):hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ========== 文章阅读 - 强制去除所有卡片 ========== */
+
+/* 文章页面完全去卡片化 */
+.post,
+.post article,
+.post .card,
+.post .article,
+.post main,
+body.post,
+body.post article,
+body.post .card:not(.social-card),
+body.post .card-content,
+body.post main,
+.article-page,
+.article-page article,
+.article-page .card,
+.single,
+.single article,
+.single .card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 强制文章容器无卡片 */
+.post .container,
+body.post .container,
+.article-page .container {
+    background: transparent !important;
+}
+
+/* 文章主体 */
+.post article,
+body.post article,
+.post .content,
+body.post .content {
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 2rem 1rem !important;
+    background: transparent !important;
+}
+
+/* 文章标题 */
+.post h1,
+.post article h1,
+body.post h1,
+body.post article h1 {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+    color: #1a1a1a !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* 文章元信息 */
+.post .meta,
+.post article .meta,
+body.post .meta {
+    color: #999 !important;
+    font-size: 0.875rem !important;
+    margin-bottom: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+
+/* 文章段落 */
+.post p,
+.post article p,
+body.post p,
+body.post article p {
+    margin-bottom: 1.8rem !important;
+    line-height: 1.9 !important;
+    color: #2c3e50 !important;
+    font-size: 1.05rem !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* 文章标题层级 */
+.post h2,
+.post article h2,
+body.post article h2 {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    margin-top: 3rem !important;
+    margin-bottom: 1.2rem !important;
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #eee !important;
+    padding-bottom: 0.6rem !important;
+}
+
+.post h3,
+.post article h3,
+body.post article h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    color: #34495e !important;
+}
+
+.post h4,
+.post article h4,
+body.post article h4 {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.8rem !important;
+    color: #555 !important;
+}
+
+/* 列表 */
+.post ul,
+.post ol,
+.post article ul,
+.post article ol {
+    margin-bottom: 1.8rem !important;
+    padding-left: 2.5rem !important;
+}
+
+.post li,
+.post article li {
+    margin-bottom: 0.8rem !important;
+    line-height: 1.8 !important;
+    color: #444 !important;
+}
+
+/* 引用块 */
+.post blockquote,
+.post article blockquote {
+    border-left: 4px solid #667eea !important;
+    background: #f7f8fa !important;
+    padding: 1.2rem 1.8rem !important;
+    margin: 2rem 0 !important;
+    color: #555 !important;
+    font-style: italic !important;
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* 图片 */
+.post img,
+.post article img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 2.5rem auto !important;
+    display: block !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 链接 */
+.post a,
+.post article a {
+    color: #667eea !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
+    transition: all 0.25s ease !important;
+}
+
+.post a:hover,
+.post article a:hover {
+    color: #5568d3 !important;
+    border-bottom-color: #5568d3 !important;
+}
+
+/* 夜间模式文章 */
+[data-theme="dark"] .post h1,
+[data-theme="dark"] body.post h1 {
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] .post h2,
+[data-theme="dark"] .post h3,
+[data-theme="dark"] .post h4 {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .post h2 {
+    border-bottom-color: #30363d !important;
+}
+
+[data-theme="dark"] .post p,
+[data-theme="dark"] .post li {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .post blockquote {
+    background: #0d1117 !important;
+    color: #8b949e !important;
+    border-left-color: #58a6ff !important;
+}
+
+[data-theme="dark"] .post .meta {
+    border-bottom-color: #30363d !important;
+}
+
+/* ========== 社交图标 - 更小 & 横向排列 ========== */
+
+.social-card {
+    background: white !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    padding: 1.2rem !important;
+    margin: 2rem auto !important;
+    max-width: 800px !important;
+}
+
+.social-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+}
+
+/* 社交图标 - 缩小到36px */
+.social-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: #f5f5f5 !important;
+    border: 1.5px solid #e0e0e0 !important;
+    color: #555 !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.social-link svg {
+    width: 18px !important;
+    height: 18px !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* 社交图标悬停 */
+.social-link:hover {
+    transform: scale(1.25) translateY(-3px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+.social-link:hover svg {
+    transform: rotate(10deg) !important;
+}
+
+.social-link:active {
+    transform: scale(0.9) !important;
+}
+
+/* GitHub */
+.social-link[href*="github"]:hover {
+    background: #24292e !important;
+    border-color: #24292e !important;
+    color: white !important;
+}
+
+/* Email */
+.social-link[href*="mailto"]:hover {
+    background: #ea4335 !important;
+    border-color: #ea4335 !important;
+    color: white !important;
+}
+
+/* Telegram */
+.social-link[href*="t.me"]:hover {
+    background: #0088cc !important;
+    border-color: #0088cc !important;
+    color: white !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .social-card {
+    background: #161b22 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .social-link {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+/* ========== 页面过渡动画 - 卡片放大 ========== */
+
+/* 页面加载动画 */
+body {
+    animation: pageZoomIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+@keyframes pageZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 卡片入场动画 - 依次放大 */
+.card {
+    animation: cardZoomIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards !important;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s !important; }
+.card:nth-child(2) { animation-delay: 0.1s !important; }
+.card:nth-child(3) { animation-delay: 0.15s !important; }
+.card:nth-child(4) { animation-delay: 0.2s !important; }
+.card:nth-child(5) { animation-delay: 0.25s !important; }
+.card:nth-child(6) { animation-delay: 0.3s !important; }
+
+@keyframes cardZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+    .post article,
+    body.post article {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .post h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .post h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .social-links {
+        gap: 1.2rem !important;
+    }
+    
+    .social-link {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    
+    .social-link svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}

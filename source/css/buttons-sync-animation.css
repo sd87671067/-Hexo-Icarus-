@@ -1,0 +1,104 @@
+/* ==========================================
+   按钮同步动画优化
+   ========================================== */
+
+/* 夜间模式按钮 - 保持原有样式 */
+.dark-mode-toggle {
+    position: fixed !important;
+    right: 1.5rem !important;
+    bottom: 2rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50% !important;
+    background: white !important;
+    color: #4a4a4a !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* 优化过渡动画 */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+[data-theme="dark"] .dark-mode-toggle {
+    background: #2d333b !important;
+    color: #fbbf24 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 回到顶部按钮 - 保持原有样式 */
+#back-to-top {
+    position: fixed !important;
+    right: 1.5rem !important;
+    bottom: 6rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50% !important;
+    background: white !important;
+    color: #4a4a4a !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+    z-index: 998 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* 优化过渡动画 */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+[data-theme="dark"] #back-to-top {
+    background: #2d333b !important;
+    color: #adbac7 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 隐藏文字 */
+#back-to-top span {
+    display: none !important;
+}
+
+/* 悬停效果 - 保持原有 */
+.dark-mode-toggle:hover,
+#back-to-top:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 同步隐藏状态 */
+.btn-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(60px) !important;
+    pointer-events: none !important;
+}
+
+/* 确保过渡时间一致 */
+.dark-mode-toggle.btn-hidden,
+#back-to-top.btn-hidden {
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* 移动端调整 */
+@media screen and (max-width: 768px) {
+    .dark-mode-toggle {
+        right: 1rem !important;
+        bottom: 1.5rem !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+    }
+    
+    #back-to-top {
+        right: 1rem !important;
+        bottom: 5rem !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+    }
+}

@@ -1,0 +1,139 @@
+/* ==========================================
+   GitHub代码块样式 - 强制应用
+   ========================================== */
+
+/* 代码块基础样式 - 最高优先级 */
+pre,
+pre[class*="language-"],
+.highlight pre,
+figure.highlight pre,
+div.highlight pre,
+code[class*="language-"],
+.hljs {
+    background: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    overflow-x: auto !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin: 16px 0 !important;
+    color: #24292f !important;
+}
+
+/* 清除其他可能的样式干扰 */
+pre * {
+    font-family: inherit !important;
+}
+
+/* 代码块内的code标签 */
+pre code,
+pre code[class*="language-"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    color: #24292f !important;
+}
+
+/* 行内代码 */
+:not(pre) > code,
+p code,
+li code,
+td code {
+    background: rgba(175, 184, 193, 0.2) !important;
+    padding: 0.2em 0.4em !important;
+    margin: 0 !important;
+    font-size: 85% !important;
+    border-radius: 6px !important;
+    color: #cf222e !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+    border: none !important;
+}
+
+/* GitHub语法高亮 */
+.hljs-comment,
+.hljs-quote,
+.comment {
+    color: #57606a !important;
+    font-style: italic !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag,
+.keyword {
+    color: #cf222e !important;
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-attribute,
+.string {
+    color: #0a3069 !important;
+}
+
+.hljs-number,
+.hljs-literal,
+.number {
+    color: #0550ae !important;
+}
+
+.hljs-function,
+.hljs-title,
+.hljs-class .hljs-title,
+.function {
+    color: #8250df !important;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.variable {
+    color: #953800 !important;
+}
+
+/* 夜间模式代码块 */
+[data-theme="dark"] pre,
+[data-theme="dark"] pre[class*="language-"],
+[data-theme="dark"] .highlight pre,
+[data-theme="dark"] .hljs {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] pre code {
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] :not(pre) > code {
+    background: rgba(110, 118, 129, 0.4) !important;
+    color: #ff7b72 !important;
+}
+
+/* 夜间模式语法高亮 */
+[data-theme="dark"] .hljs-comment {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .hljs-keyword {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .hljs-string {
+    color: #a5d6ff !important;
+}
+
+[data-theme="dark"] .hljs-function {
+    color: #d2a8ff !important;
+}
+
+[data-theme="dark"] .hljs-number {
+    color: #79c0ff !important;
+}
+
+/* 确保复制按钮正确显示 */
+pre {
+    position: relative !important;
+}

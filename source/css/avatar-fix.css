@@ -1,0 +1,49 @@
+/* ==========================================
+   头像加载优化 - 移除占位符
+   ========================================== */
+
+/* 移除所有占位符背景 */
+.avatar,
+.media-left .image,
+.navbar-brand .image,
+img {
+    background: transparent !important;
+}
+
+/* 移除shimmer动画 */
+.avatar-loading {
+    background: transparent !important;
+    animation: none !important;
+}
+
+/* 头像直接显示，不使用淡入 */
+.avatar img,
+.media-left img,
+.navbar-brand img,
+img {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* 移除错误占位符 */
+.avatar-error {
+    background: transparent !important;
+}
+
+.avatar-error::after {
+    display: none !important;
+}
+
+/* 确保图片加载时不显示边框或背景 */
+img:not([src]),
+img[src=""],
+img[src="#"] {
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* 加载完成的图片正常显示 */
+img[src]:not([src=""]):not([src="#"]) {
+    opacity: 1 !important;
+}

@@ -1,0 +1,71 @@
+/* ========================================== 
+   头像加载优化 - Shimmer 效果
+   ========================================== */
+
+/* 头像容器固定尺寸，防止布局跳动 */
+.avatar,
+.media-left .image,
+.navbar-brand .image {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+/* Shimmer 加载动画 */
+.avatar-loading {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* 头像淡入效果 */
+.avatar img,
+.media-left img,
+.navbar-brand img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.avatar img.loaded,
+.media-left img.loaded,
+.navbar-brand img.loaded {
+    opacity: 1;
+}
+
+/* 固定常见头像尺寸 */
+.avatar-32 { width: 32px; height: 32px; }
+.avatar-64 { width: 64px; height: 64px; }
+.avatar-128 { width: 128px; height: 128px; }
+.avatar-256 { width: 256px; height: 256px; }
+
+/* 圆形头像 */
+.avatar.is-rounded,
+.avatar.is-rounded img {
+    border-radius: 50%;
+}
+
+/* 加载失败时的默认样式 */
+.avatar-error {
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.avatar-error::after {
+    content: "👤";
+    font-size: 24px;
+}

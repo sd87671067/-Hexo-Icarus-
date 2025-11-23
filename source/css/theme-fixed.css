@@ -1,0 +1,303 @@
+/* ==========================================
+   修复夜间模式导航栏和切换按钮
+   ========================================== */
+
+/* ==========================================
+   夜间模式切换按钮（始终显示）
+   ========================================== */
+
+.dark-mode-toggle {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 3px solid rgba(255, 255, 255, 0.9) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    z-index: 999999 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 夜间模式时的按钮样式 */
+[data-theme="dark"] .dark-mode-toggle {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border: 3px solid rgba(88, 166, 255, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3) !important;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.15) rotate(15deg) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95) !important;
+}
+
+.dark-mode-toggle svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: white !important;
+    stroke: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* ==========================================
+   夜间模式导航栏（强制深色）
+   ========================================== */
+
+/* 主导航栏 - 夜间模式 */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar,
+[data-theme="dark"] .navbar.is-transparent,
+[data-theme="dark"] .navbar.is-white,
+[data-theme="dark"] .navbar.is-light,
+[data-theme="dark"] header .navbar,
+[data-theme="dark"] header nav {
+    background: #0d1117 !important;
+    background: linear-gradient(90deg, #0d1117 0%, #161b22 100%) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.8) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 导航栏品牌区 */
+[data-theme="dark"] .navbar-brand {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .navbar-brand .navbar-item {
+    color: #f0f6fc !important;
+}
+
+/* 导航栏菜单 */
+[data-theme="dark"] .navbar-menu {
+    background: transparent !important;
+}
+
+/* 导航栏链接 */
+[data-theme="dark"] .navbar-item,
+[data-theme="dark"] .navbar-link,
+[data-theme="dark"] a.navbar-item,
+[data-theme="dark"] .navbar-brand a {
+    color: #c9d1d9 !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .navbar-item:hover,
+[data-theme="dark"] .navbar-link:hover {
+    background: rgba(88, 166, 255, 0.15) !important;
+    color: #58a6ff !important;
+    border-radius: 8px !important;
+}
+
+/* 移动端汉堡菜单 */
+[data-theme="dark"] .navbar-burger {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar-burger:hover {
+    background: rgba(88, 166, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .navbar-burger span {
+    background-color: #c9d1d9 !important;
+}
+
+/* 下拉菜单 */
+[data-theme="dark"] .navbar-dropdown {
+    background: #161b22 !important;
+    border: 1px solid rgba(48, 54, 61, 0.8) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .navbar-dropdown .navbar-item {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar-dropdown .navbar-item:hover {
+    background: rgba(88, 166, 255, 0.15) !important;
+    color: #58a6ff !important;
+}
+
+/* ==========================================
+   白天模式导航栏（优化毛玻璃）
+   ========================================== */
+
+:not([data-theme="dark"]) .navbar,
+:not([data-theme="dark"]) nav.navbar {
+    background: rgba(255, 255, 255, 0.72) !important;
+    backdrop-filter: saturate(200%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(200%) blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+:not([data-theme="dark"]) .navbar-item:hover,
+:not([data-theme="dark"]) .navbar-link:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 8px !important;
+}
+
+/* ==========================================
+   夜间模式卡片（深色）
+   ========================================== */
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget,
+[data-theme="dark"] article.card,
+[data-theme="dark"] .media {
+    background: rgba(22, 27, 34, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(48, 54, 61, 0.5) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .widget:hover {
+    background: rgba(28, 33, 40, 0.95) !important;
+    border-color: rgba(88, 166, 255, 0.3) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(88, 166, 255, 0.2) !important;
+}
+
+/* 卡片内容 */
+[data-theme="dark"] .card-content,
+[data-theme="dark"] .widget-body,
+[data-theme="dark"] .media-content {
+    background: transparent !important;
+    color: #c9d1d9 !important;
+}
+
+/* ==========================================
+   夜间模式文字颜色
+   ========================================== */
+
+[data-theme="dark"] body {
+    background: #0a0e1a !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .title {
+    color: #f0f6fc !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .content {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+}
+
+[data-theme="dark"] a:hover {
+    color: #79c0ff !important;
+}
+
+/* ==========================================
+   夜间模式其他元素
+   ========================================== */
+
+/* 标签 */
+[data-theme="dark"] .tag {
+    background: rgba(22, 27, 34, 0.8) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 按钮 */
+[data-theme="dark"] .button {
+    background: rgba(22, 27, 34, 0.9) !important;
+    border: 1px solid rgba(48, 54, 61, 0.8) !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .button:hover {
+    background: rgba(28, 33, 40, 0.95) !important;
+    border-color: #58a6ff !important;
+    color: #58a6ff !important;
+}
+
+/* 输入框 */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: rgba(22, 27, 34, 0.9) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 页脚 */
+[data-theme="dark"] .footer,
+[data-theme="dark"] footer {
+    background: #0d1117 !important;
+    border-top: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #8b949e !important;
+}
+
+/* ==========================================
+   响应式优化
+   ========================================== */
+
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+    
+    .dark-mode-toggle svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    [data-theme="dark"] .navbar-menu {
+        background: #0d1117 !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6) !important;
+    }
+}
+
+/* ==========================================
+   强制覆盖 Bulma 默认样式
+   ========================================== */
+
+[data-theme="dark"] .navbar.is-white,
+[data-theme="dark"] .navbar.is-light {
+    background-color: #0d1117 !important;
+}
+
+[data-theme="dark"] .navbar.is-white .navbar-item,
+[data-theme="dark"] .navbar.is-light .navbar-item {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar.is-white .navbar-item:hover,
+[data-theme="dark"] .navbar.is-light .navbar-item:hover {
+    background-color: rgba(88, 166, 255, 0.15) !important;
+    color: #58a6ff !important;
+}
+
+/* 确保按钮始终在最上层 */
+.dark-mode-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

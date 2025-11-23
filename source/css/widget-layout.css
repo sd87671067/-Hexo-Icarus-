@@ -1,0 +1,100 @@
+/* ==========================================
+   Widget横向布局样式
+   ========================================== */
+
+/* 确保level横向排列 */
+.card .level {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.card .level.is-mobile {
+    display: flex !important;
+}
+
+.card .level-item {
+    flex-basis: auto !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* 统计数据样式 */
+.card .level-item > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.card .level-item svg {
+    display: block !important;
+    margin: 0 auto 8px !important;
+}
+
+.card .level-item .heading {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 4px !important;
+    color: #7a7a7a !important;
+    text-transform: uppercase !important;
+}
+
+.card .level-item .title {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: #363636 !important;
+    line-height: 1.125 !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .card .level-item .heading {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .card .level-item .title {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .card .level-item svg {
+    fill: #58a6ff !important;
+}
+
+/* 社交图标按钮 */
+.card .button.is-white {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    height: auto !important;
+}
+
+.card .button.is-white:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+    border-radius: 50% !important;
+}
+
+.card .button.is-white .icon {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.card .button.is-white svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #666 !important;
+}
+
+.card .button.is-white:hover svg {
+    fill: #667eea !important;
+}
+
+[data-theme="dark"] .card .button.is-white svg {
+    fill: #8b949e !important;
+}
+
+[data-theme="dark"] .card .button.is-white:hover svg {
+    fill: #58a6ff !important;
+}

@@ -1,0 +1,168 @@
+/* 稳定版本样式 */
+body, html, .container, .card, .card-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.columns {
+    display: block !important;
+}
+
+.column {
+    width: 100% !important;
+}
+
+.column.is-4-tablet, .column.is-4-desktop {
+    display: none !important;
+}
+
+.container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+}
+
+.card {
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-content {
+    padding: 1.5rem !important;
+}
+
+.post article, .post .card, body.post article {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.post article, body.post article {
+    max-width: 750px !important;
+    margin: 2rem auto !important;
+    padding: 0 1rem !important;
+}
+
+.post h1, body.post h1 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+}
+
+.post p, body.post p {
+    line-height: 1.8 !important;
+    color: #333 !important;
+    font-size: 1.05rem !important;
+}
+
+.post h2 {
+    font-size: 1.75rem !important;
+    margin-top: 2.5rem !important;
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #eee !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.post h3 {
+    font-size: 1.4rem !important;
+    color: #34495e !important;
+}
+
+.post blockquote {
+    border-left: 4px solid #667eea !important;
+    background: #f8f9fa !important;
+    padding: 1rem 1.5rem !important;
+    color: #555 !important;
+}
+
+.social-card {
+    background: white !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    padding: 1.2rem !important;
+    margin: 2rem auto !important;
+}
+
+.social-links {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+}
+
+.social-link {
+    display: flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: #f5f5f5 !important;
+    border: 1.5px solid #e0e0e0 !important;
+    color: #555 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.social-link svg {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.social-link:hover {
+    transform: scale(1.2) translateY(-3px) !important;
+}
+
+.social-link[href*="github"]:hover {
+    background: #24292e !important;
+    color: white !important;
+}
+
+.social-link[href*="mailto"]:hover {
+    background: #ea4335 !important;
+    color: white !important;
+}
+
+.social-link[href*="t.me"]:hover {
+    background: #0088cc !important;
+    color: white !important;
+}
+
+[data-theme="dark"] body {
+    background: #0d1117 !important;
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] .card {
+    background: #161b22 !important;
+}
+
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 {
+    color: #f0f6fc !important;
+}
+
+[data-theme="dark"] p {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+}
+
+[data-theme="dark"] pre, [data-theme="dark"] code {
+    background: #000000 !important;
+}
+
+[data-theme="dark"] .social-card {
+    background: #161b22 !important;
+}
+
+[data-theme="dark"] .social-link {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+}

@@ -1,0 +1,77 @@
+/* iOS 风格毛玻璃效果 */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-blur: 20px;
+}
+
+/* 背景渐变 */
+body:not([data-theme="dark"]) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* 导航栏毛玻璃 */
+:not([data-theme="dark"]) .navbar {
+    background: rgba(255, 255, 255, 0.72) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* 卡片毛玻璃 */
+:not([data-theme="dark"]) .card,
+:not([data-theme="dark"]) .widget {
+    background: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: saturate(180%) blur(12px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* 按钮样式 */
+:not([data-theme="dark"]) .button {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* 夜间模式兼容 */
+[data-theme="dark"] body {
+    background: #0d1117 !important;
+}
+[data-theme="dark"] .navbar {
+    background: #0d1117 !important;
+    border-bottom: 1px solid #30363d !important;
+}
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+/* 浮动切换按钮 */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}

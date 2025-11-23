@@ -1,0 +1,67 @@
+/* ==========================================
+   删除文章页面多余的社交图标
+   ========================================== */
+
+/* 删除文章内容区域的所有社交图标 */
+article .level-item a[href*="github"],
+article .level-item a[href*="mailto"],
+article .level-item a[href*="t.me"],
+.article .level-item a[href*="github"],
+.article .level-item a[href*="mailto"],
+.article .level-item a[href*="t.me"],
+.post .level-item a[href*="github"],
+.post .level-item a[href*="mailto"],
+.post .level-item a[href*="t.me"] {
+    display: none !important;
+}
+
+/* 删除文章卡片中的社交图标（通常在顶部或中间） */
+.card:has(article) .level-item a[href*="github"],
+.card:has(article) .level-item a[href*="mailto"],
+.card:has(article) .level-item a[href*="t.me"],
+.card:has(.article) .level-item a[href*="github"],
+.card:has(.article) .level-item a[href*="mailto"],
+.card:has(.article) .level-item a[href*="t.me"] {
+    display: none !important;
+}
+
+/* 只保留widget（侧边栏）中的社交图标 */
+.widget .level-item a[href*="github"],
+.widget .level-item a[href*="mailto"],
+.widget .level-item a[href*="t.me"],
+.column.is-4 .level-item a[href*="github"],
+.column.is-4 .level-item a[href*="mailto"],
+.column.is-4 .level-item a[href*="t.me"] {
+    display: inline-flex !important;
+}
+
+/* 确保profile卡片的社交图标显示 */
+.card.widget .level-item a[href*="github"],
+.card.widget .level-item a[href*="mailto"],
+.card.widget .level-item a[href*="t.me"] {
+    display: inline-flex !important;
+}
+
+/* 删除文章列表页面（首页）文章卡片中的社交图标 */
+.card-content:has(h2.title) .level-item a[href*="github"],
+.card-content:has(h2.title) .level-item a[href*="mailto"],
+.card-content:has(h2.title) .level-item a[href*="t.me"],
+.card-content:has(.article-title) .level-item a[href*="github"],
+.card-content:has(.article-title) .level-item a[href*="mailto"],
+.card-content:has(.article-title) .level-item a[href*="t.me"] {
+    display: none !important;
+}
+
+/* 删除包含社交图标的level-item */
+.level-item:has(a[href*="github"]):not(.widget .level-item),
+.level-item:has(a[href*="mailto"]):not(.widget .level-item),
+.level-item:has(a[href*="t.me"]):not(.widget .level-item) {
+    display: none !important;
+}
+
+/* 强制保留侧边栏widget中的 */
+aside .level-item:has(a[href*="github"]),
+aside .level-item:has(a[href*="mailto"]),
+aside .level-item:has(a[href*="t.me"]) {
+    display: flex !important;
+}

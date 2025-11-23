@@ -1,0 +1,80 @@
+/* ==========================================
+   保留社交图标，删除其他矢量图标
+   ========================================== */
+
+/* 删除大部分SVG图标 */
+.card svg:not(.social-icon),
+.widget svg:not(.social-icon),
+.level-item:not(.social-link) svg,
+.tag svg,
+.category svg,
+article > svg {
+    display: none !important;
+}
+
+/* 保留社交图标 - Telegram, Email, GitHub */
+.card .level-item a[href*="t.me"] svg,
+.card .level-item a[href*="telegram"] svg,
+.card .level-item a[href*="mailto"] svg,
+.card .level-item a[href*="github"] svg {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* 社交图标容器样式 */
+.card .level-item a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.card .level-item a:hover {
+    background: rgba(102, 126, 234, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+[data-theme="dark"] .card .level-item a {
+    background: rgba(88, 166, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .card .level-item a:hover {
+    background: rgba(88, 166, 255, 0.2) !important;
+}
+
+/* 删除文章统计的图标 */
+.level-item .icon:not(:has(a)) {
+    display: none !important;
+}
+
+/* 优化统计数字显示 */
+.level-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.level-item > span:first-child {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin-bottom: 4px !important;
+}
+
+.level-item > span:last-child {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+
+[data-theme="dark"] .level-item > span:first-child {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .level-item > span:last-child {
+    color: #e6edf3 !important;
+}

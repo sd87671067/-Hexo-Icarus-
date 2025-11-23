@@ -1,0 +1,420 @@
+/* ==========================================
+   完整夜间模式 + 动画效果
+   ========================================== */
+
+/* 页面加载动画 */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 页面初始加载动画 */
+body {
+    animation: pageLoad 0.6s ease-out;
+}
+
+/* 导航栏动画 */
+.navbar,
+nav.navbar,
+.navbar.is-transparent,
+.navbar.is-fixed-top {
+    animation: slideDown 0.8s ease-out;
+    transition: all 0.3s ease !important;
+}
+
+/* 卡片动画 */
+.card,
+.widget,
+.article,
+.media {
+    animation: scaleIn 0.6s ease-out;
+    animation-fill-mode: both;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 延迟动画 */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* 文章列表交替动画 */
+.article:nth-child(odd) {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.article:nth-child(even) {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+/* ==========================================
+   夜间模式变量
+   ========================================== */
+
+[data-theme="dark"] {
+    --bg-primary: #0d1117 !important;
+    --bg-secondary: #161b22 !important;
+    --bg-card: #1c2128 !important;
+    --bg-hover: #262c36 !important;
+    --bg-navbar: #010409 !important;
+    --text-primary: #c9d1d9 !important;
+    --text-secondary: #8b949e !important;
+    --text-title: #f0f6fc !important;
+    --border-color: #30363d !important;
+    --shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+    --link-color: #58a6ff !important;
+}
+
+/* ==========================================
+   导航栏夜间模式（最高优先级）
+   ========================================== */
+
+/* 基础导航栏 */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar,
+[data-theme="dark"] .navbar.is-transparent,
+[data-theme="dark"] .navbar.is-fixed-top,
+[data-theme="dark"] header .navbar,
+[data-theme="dark"] header nav {
+    background-color: #010409 !important;
+    background: linear-gradient(90deg, #010409 0%, #0d1117 100%) !important;
+    border-bottom: 1px solid #30363d !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.8) !important;
+}
+
+/* Bulma 导航栏覆盖 */
+[data-theme="dark"] .navbar.is-white,
+[data-theme="dark"] .navbar.is-light,
+[data-theme="dark"] .navbar.is-transparent {
+    background-color: #010409 !important;
+    background: linear-gradient(90deg, #010409 0%, #0d1117 100%) !important;
+}
+
+/* 导航栏品牌 */
+[data-theme="dark"] .navbar-brand {
+    background-color: transparent !important;
+}
+
+/* 导航栏菜单 */
+[data-theme="dark"] .navbar-menu {
+    background-color: transparent !important;
+}
+
+/* 导航栏项目 */
+[data-theme="dark"] .navbar-item,
+[data-theme="dark"] .navbar-link,
+[data-theme="dark"] a.navbar-item,
+[data-theme="dark"] .navbar-brand .navbar-item {
+    color: #c9d1d9 !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .navbar-item:hover,
+[data-theme="dark"] .navbar-link:hover,
+[data-theme="dark"] a.navbar-item:hover {
+    background-color: rgba(88, 166, 255, 0.1) !important;
+    color: #58a6ff !important;
+    transform: translateY(-2px);
+}
+
+/* 导航栏按钮动画 */
+.navbar-item,
+.navbar-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-item::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #58a6ff, transparent);
+    transition: top 0.3s ease;
+}
+
+.navbar-item:hover::before {
+    top: calc(100% - 2px);
+}
+
+/* 移动端导航栏 */
+[data-theme="dark"] .navbar-burger {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar-burger:hover {
+    background-color: rgba(88, 166, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .navbar-burger span {
+    background-color: #c9d1d9 !important;
+}
+
+/* 下拉菜单 */
+[data-theme="dark"] .navbar-dropdown {
+    background-color: #010409 !important;
+    border: 1px solid #30363d !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+
+[data-theme="dark"] .navbar-dropdown .navbar-item {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar-dropdown .navbar-item:hover {
+    background-color: rgba(88, 166, 255, 0.1) !important;
+    color: #58a6ff !important;
+}
+
+/* ==========================================
+   全局背景和文字
+   ========================================== */
+
+[data-theme="dark"] body {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .section {
+    background-color: transparent !important;
+}
+
+/* ==========================================
+   卡片样式和动画
+   ========================================== */
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget,
+[data-theme="dark"] article.card,
+[data-theme="dark"] .media {
+    background-color: #1c2128 !important;
+    border: 1px solid #30363d !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+
+/* 卡片悬停动画 */
+.card:hover,
+.widget:hover,
+article:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .widget:hover,
+[data-theme="dark"] article:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+    border-color: #58a6ff !important;
+}
+
+/* 卡片内容 */
+[data-theme="dark"] .card-content,
+[data-theme="dark"] .widget-body,
+[data-theme="dark"] .media-content {
+    background-color: transparent !important;
+    color: #c9d1d9 !important;
+}
+
+/* ==========================================
+   文字和标题
+   ========================================== */
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .title,
+[data-theme="dark"] .subtitle {
+    color: #f0f6fc !important;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] a:hover {
+    color: #79c0ff !important;
+}
+
+/* ==========================================
+   标签和按钮
+   ========================================== */
+
+[data-theme="dark"] .tag {
+    background-color: #161b22 !important;
+    color: #c9d1d9 !important;
+    border: 1px solid #30363d !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .tag:hover {
+    background-color: #262c36 !important;
+    transform: scale(1.05);
+}
+
+[data-theme="dark"] .button {
+    background-color: #161b22 !important;
+    color: #c9d1d9 !important;
+    border: 1px solid #30363d !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .button:hover {
+    background-color: #262c36 !important;
+    border-color: #58a6ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+
+/* ==========================================
+   页脚
+   ========================================== */
+
+[data-theme="dark"] .footer,
+[data-theme="dark"] footer {
+    background-color: #010409 !important;
+    color: #8b949e !important;
+    border-top: 1px solid #30363d !important;
+}
+
+/* ==========================================
+   夜间模式切换按钮
+   ========================================== */
+
+.dark-mode-toggle {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 2px solid #ffffff !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    z-index: 99999 !important;
+    transition: all 0.3s ease !important;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1) rotate(180deg) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode-toggle svg {
+    width: 26px !important;
+    height: 26px !important;
+    fill: white !important;
+}
+
+[data-theme="dark"] .dark-mode-toggle {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%) !important;
+    border: 2px solid #30363d !important;
+}
+
+/* ==========================================
+   加载进度条
+   ========================================== */
+
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #58a6ff, #238636, #58a6ff);
+    background-size: 200% 100%;
+    animation: loading 1.5s linear infinite;
+    z-index: 100000;
+}
+
+@keyframes loading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ==========================================
+   平滑过渡
+   ========================================== */
+
+* {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease !important;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    [data-theme="dark"] .navbar-menu {
+        background-color: #010409 !important;
+    }
+    
+    .dark-mode-toggle {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}

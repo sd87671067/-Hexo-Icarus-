@@ -1,0 +1,34 @@
+/* ==========================================
+   移除阅读卡片动画
+   ========================================== */
+
+/* 文章内容卡片 - 无动画 */
+article,
+article .card,
+.article,
+.post,
+.post-card,
+.card:has(article),
+.card-content:has(article) {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+article:hover,
+article .card:hover,
+.article:hover,
+.post:hover {
+    transform: none !important;
+    animation: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 列表卡片保留轻微效果 */
+.card:not(article):not(.article):not(.post):not(.stats-social-card) {
+    transition: box-shadow 0.2s ease !important;
+}
+
+.card:not(article):not(.article):not(.post):not(.stats-social-card):hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}

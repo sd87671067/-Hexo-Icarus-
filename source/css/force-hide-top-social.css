@@ -1,0 +1,70 @@
+/* ==========================================
+   强力删除文章顶部的社交图标
+   ========================================== */
+
+/* 删除文章标题区域右侧的所有链接和图标 */
+.card-content > .level:first-child .level-right,
+.card-content > .level:first-child .level-item:nth-child(n+4),
+article > .level .level-right,
+article > .level .level-item:has(a[href*="github"]):not(:only-child),
+article > .level .level-item:has(a[href*="mailto"]):not(:only-child),
+article > .level .level-item:has(a[href*="t.me"]):not(:only-child) {
+    display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+}
+
+/* 精确定位：只保留底部的社交图标 */
+.card-content .level:last-child .level-item a[href*="github"],
+.card-content .level:last-child .level-item a[href*="mailto"],
+.card-content .level:last-child .level-item a[href*="t.me"] {
+    display: inline-flex !important;
+}
+
+/* 删除顶部区域（文章元数据附近）的所有社交图标 */
+.card-content > p + .level .level-item a[href*="github"],
+.card-content > p + .level .level-item a[href*="mailto"],
+.card-content > p + .level .level-item a[href*="t.me"],
+.card-content > h1 + .level .level-item a[href*="github"],
+.card-content > h1 + .level .level-item a[href*="mailto"],
+.card-content > h1 + .level .level-item a[href*="t.me"],
+.card-content > h2 + .level .level-item a[href*="github"],
+.card-content > h2 + .level .level-item a[href*="mailto"],
+.card-content > h2 + .level .level-item a[href*="t.me"] {
+    display: none !important;
+}
+
+/* 删除文章标题附近的level-item */
+.article-meta + .level .level-item:has(a[href*="github"]),
+.article-meta + .level .level-item:has(a[href*="mailto"]),
+.article-meta + .level .level-item:has(a[href*="t.me"]),
+.post-meta + .level .level-item:has(a[href*="github"]),
+.post-meta + .level .level-item:has(a[href*="mailto"]),
+.post-meta + .level .level-item:has(a[href*="t.me"]) {
+    display: none !important;
+}
+
+/* 使用nth-child删除前3个以外的level-item（如果是社交链接）*/
+.card-content > .level .level-item:nth-child(4),
+.card-content > .level .level-item:nth-child(5),
+.card-content > .level .level-item:nth-child(6) {
+    display: none !important;
+}
+
+/* 只在底部显示社交图标：包含"文章"、"分类"、"标签"文字的level下面 */
+.level:has(span:contains("文章")) ~ .level .level-item a,
+.level:has(span:contains("分类")) ~ .level .level-item a,
+.level:has(span:contains("标签")) ~ .level .level-item a {
+    display: inline-flex !important;
+}
+
+/* 确保统计数据显示 */
+.level-item:has(span:contains("文章")),
+.level-item:has(span:contains("分类")),
+.level-item:has(span:contains("标签")) {
+    display: flex !important;
+}

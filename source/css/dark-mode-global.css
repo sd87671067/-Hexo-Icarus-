@@ -1,0 +1,49 @@
+/* ==========================================
+   全局夜间模式增强
+   ========================================== */
+
+/* 确保HTML级别的夜间模式 */
+[data-theme="dark"] {
+    background: #0d1117 !important;
+    color: #e6edf3 !important;
+}
+
+/* 导航栏夜间模式 - 强制覆盖 */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar {
+    background: #161b22 !important;
+    border-bottom: 1px solid #30363d !important;
+}
+
+/* 导航栏所有子元素 */
+[data-theme="dark"] .navbar *,
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .navbar-menu,
+[data-theme="dark"] .navbar-start,
+[data-theme="dark"] .navbar-end {
+    background-color: transparent !important;
+}
+
+/* 导航项文字 */
+[data-theme="dark"] .navbar-item,
+[data-theme="dark"] .navbar-link,
+[data-theme="dark"] .navbar a {
+    color: #e6edf3 !important;
+}
+
+/* 导航项悬停 */
+[data-theme="dark"] .navbar-item:hover,
+[data-theme="dark"] .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #58a6ff !important;
+}
+
+/* 移动端菜单 */
+[data-theme="dark"] .navbar-menu.is-active {
+    background: #161b22 !important;
+}
+
+/* 汉堡按钮线条 */
+[data-theme="dark"] .navbar-burger span {
+    background-color: #e6edf3 !important;
+}

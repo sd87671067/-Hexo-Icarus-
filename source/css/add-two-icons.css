@@ -1,0 +1,31 @@
+/* 为新增的两个图标添加样式 */
+
+/* 确保社交卡片可见 */
+.social-card {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.social-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.social-link {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 新增图标的悬停颜色 */
+.social-link[href*="mql5"]:hover {
+    background: #1e3a8a !important;
+    border-color: #1e3a8a !important;
+    color: white !important;
+}
+
+.social-link[href*="exness"]:hover {
+    background: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}

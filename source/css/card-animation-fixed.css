@@ -1,0 +1,252 @@
+/* ==========================================
+   主页卡片动画 - 可重复触发 & 更慢速度
+   ========================================== */
+
+/* 主页卡片基础样式 */
+.index .card:not(.social-card),
+.home .card:not(.social-card),
+body:not(.post) .card:not(.social-card):not(article .card) {
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    margin-bottom: 1.5rem !important;
+    cursor: pointer !important;
+    transform: scale(1) !important;
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.8s ease !important;
+}
+
+/* 悬停效果 - 使用transition而非animation，可重复触发 */
+.index .card:not(.social-card):hover,
+.home .card:not(.social-card):hover,
+body:not(.post) .card:not(.social-card):not(article .card):hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.8s ease !important;
+}
+
+/* 点击效果 */
+.index .card:not(.social-card):active,
+.home .card:not(.social-card):active,
+body:not(.post) .card:not(.social-card):not(article .card):active {
+    transform: scale(0.97) !important;
+    transition: transform 0.4s ease !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .index .card:not(.social-card),
+[data-theme="dark"] .home .card:not(.social-card),
+[data-theme="dark"] body:not(.post) .card:not(.social-card) {
+    background: #161b22 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .index .card:not(.social-card):hover,
+[data-theme="dark"] .home .card:not(.social-card):hover,
+[data-theme="dark"] body:not(.post) .card:not(.social-card):hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ========== 文章内容 - 完全去除卡片 ========== */
+
+/* 去除文章页面所有卡片样式 */
+.post article,
+.post .card,
+.post .article,
+body.post article,
+body.post .card:not(.social-card),
+body.post .card-content,
+.article-page article,
+.article-page .card,
+.single article,
+.single .card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 文章容器 */
+.post article,
+body.post article,
+.article-page article {
+    max-width: 800px !important;
+    margin: 2rem auto !important;
+    padding: 0 1rem !important;
+}
+
+/* 文章标题 */
+.post article h1,
+.post article .title,
+body.post h1 {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+    color: #1a1a1a !important;
+}
+
+/* 文章元信息 */
+.post article .meta,
+.post .article-meta,
+body.post .meta {
+    color: #999 !important;
+    font-size: 0.875rem !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+/* 文章段落 */
+.post article p,
+body.post article p {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.8 !important;
+    color: #333 !important;
+    font-size: 1.05rem !important;
+}
+
+/* 文章副标题 */
+.post article h2,
+body.post article h2 {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #f0f0f0 !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.post article h3,
+body.post article h3 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.8rem !important;
+    color: #34495e !important;
+}
+
+.post article h4,
+body.post article h4 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.6rem !important;
+    color: #555 !important;
+}
+
+/* 列表 */
+.post article ul,
+.post article ol,
+body.post article ul,
+body.post article ol {
+    margin-bottom: 1.5rem !important;
+    padding-left: 2rem !important;
+}
+
+.post article li,
+body.post article li {
+    margin-bottom: 0.75rem !important;
+    line-height: 1.7 !important;
+    color: #444 !important;
+}
+
+/* 引用块 */
+.post article blockquote,
+body.post article blockquote {
+    border-left: 4px solid #667eea !important;
+    background: #f8f9fa !important;
+    padding: 1rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    color: #555 !important;
+    font-style: italic !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* 代码块保持原样 */
+.post article pre,
+body.post article pre {
+    margin: 1.5rem 0 !important;
+}
+
+/* 图片 */
+.post article img,
+body.post article img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 2rem auto !important;
+    display: block !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 链接 */
+.post article a,
+body.post article a {
+    color: #667eea !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.post article a:hover,
+body.post article a:hover {
+    color: #5568d3 !important;
+    border-bottom-color: #5568d3 !important;
+}
+
+/* 夜间模式 - 文章 */
+[data-theme="dark"] .post article h1,
+[data-theme="dark"] body.post h1 {
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] .post article h2,
+[data-theme="dark"] .post article h3,
+[data-theme="dark"] .post article h4 {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .post article h2 {
+    border-bottom-color: #30363d !important;
+}
+
+[data-theme="dark"] .post article p,
+[data-theme="dark"] .post article li {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .post article blockquote {
+    background: #161b22 !important;
+    color: #8b949e !important;
+    border-left-color: #58a6ff !important;
+}
+
+[data-theme="dark"] .post .article-meta,
+[data-theme="dark"] body.post .meta {
+    border-bottom-color: #30363d !important;
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+    .post article,
+    body.post article {
+        padding: 0 0.5rem !important;
+    }
+    
+    .post article h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .post article h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .post article p {
+        font-size: 1rem !important;
+    }
+}

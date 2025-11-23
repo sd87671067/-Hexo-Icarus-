@@ -1,0 +1,341 @@
+/* ==========================================
+   优化的白天和夜间模式
+   ========================================== */
+
+/* ==========================================
+   白天模式 - 增强毛玻璃效果
+   ========================================== */
+
+/* 白天模式背景 */
+:not([data-theme="dark"]) body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 背景装饰圆圈 */
+:not([data-theme="dark"]) body::before {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(129, 230, 217, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -300px;
+    left: -300px;
+    z-index: -1;
+}
+
+:not([data-theme="dark"]) body::after {
+    content: '';
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(251, 113, 133, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    bottom: -400px;
+    right: -400px;
+    z-index: -1;
+}
+
+/* 导航栏 - 强化毛玻璃 */
+:not([data-theme="dark"]) .navbar,
+:not([data-theme="dark"]) nav.navbar {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: saturate(200%) blur(25px) !important;
+    -webkit-backdrop-filter: saturate(200%) blur(25px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 卡片 - 强化毛玻璃 */
+:not([data-theme="dark"]) .card,
+:not([data-theme="dark"]) .widget,
+:not([data-theme="dark"]) article.card {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: saturate(200%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(200%) blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 24px !important;
+    box-shadow: 
+        0 20px 40px rgba(31, 38, 135, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+        0 1px 0 rgba(255, 255, 255, 0.9) inset !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* 卡片光泽效果 */
+:not([data-theme="dark"]) .card::before,
+:not([data-theme="dark"]) .widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+:not([data-theme="dark"]) .card:hover::before,
+:not([data-theme="dark"]) .widget:hover::before {
+    left: 100%;
+}
+
+/* 卡片悬停 */
+:not([data-theme="dark"]) .card:hover,
+:not([data-theme="dark"]) .widget:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 
+        0 30px 60px rgba(31, 38, 135, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+}
+
+/* 按钮毛玻璃 */
+:not([data-theme="dark"]) .button,
+:not([data-theme="dark"]) .btn {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 14px !important;
+    box-shadow: 
+        0 4px 20px rgba(31, 38, 135, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+:not([data-theme="dark"]) .button:hover {
+    background: rgba(255, 255, 255, 0.6) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+}
+
+/* 标签毛玻璃 */
+:not([data-theme="dark"]) .tag {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 24px !important;
+}
+
+/* ==========================================
+   夜间模式 - 深色优化
+   ========================================== */
+
+/* 夜间模式背景 */
+[data-theme="dark"] body {
+    background: #0a0e1a !important;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%) !important;
+}
+
+/* 夜间模式导航栏 */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar {
+    background: rgba(13, 17, 23, 0.85) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 夜间模式卡片 - 更深的颜色 */
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget,
+[data-theme="dark"] article.card,
+[data-theme="dark"] .media {
+    background: rgba(22, 27, 34, 0.8) !important;
+    backdrop-filter: saturate(180%) blur(10px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(10px) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    border-radius: 20px !important;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(48, 54, 61, 0.5) !important;
+}
+
+/* 夜间模式卡片悬停 */
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .widget:hover {
+    background: rgba(28, 33, 40, 0.9) !important;
+    border-color: rgba(88, 166, 255, 0.3) !important;
+    transform: translateY(-5px) scale(1.01) !important;
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(88, 166, 255, 0.1) !important;
+}
+
+/* 夜间模式文字 */
+[data-theme="dark"] {
+    --text-primary: #e6edf3 !important;
+    --text-secondary: #8b949e !important;
+    --text-title: #f0f6fc !important;
+}
+
+[data-theme="dark"] .title,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+    color: #f0f6fc !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .content {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+}
+
+/* 夜间模式按钮 */
+[data-theme="dark"] .button,
+[data-theme="dark"] .btn {
+    background: rgba(22, 27, 34, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(48, 54, 61, 0.8) !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .button:hover {
+    background: rgba(28, 33, 40, 0.9) !important;
+    border-color: #58a6ff !important;
+}
+
+/* 夜间模式标签 */
+[data-theme="dark"] .tag {
+    background: rgba(22, 27, 34, 0.7) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 夜间模式页脚 */
+[data-theme="dark"] .footer,
+[data-theme="dark"] footer {
+    background: rgba(13, 17, 23, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(48, 54, 61, 0.5) !important;
+}
+
+/* ==========================================
+   通用优化
+   ========================================== */
+
+/* 确保所有卡片内容正确显示 */
+.card-content,
+.widget-body,
+.media-content {
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* 导航栏项目 */
+.navbar-item,
+.navbar-link {
+    transition: all 0.3s ease !important;
+    border-radius: 12px !important;
+    padding: 0.5rem 1rem !important;
+}
+
+:not([data-theme="dark"]) .navbar-item:hover,
+:not([data-theme="dark"]) .navbar-link:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .navbar-item:hover,
+[data-theme="dark"] .navbar-link:hover {
+    background: rgba(88, 166, 255, 0.1) !important;
+}
+
+/* 分页优化 */
+:not([data-theme="dark"]) .pagination-link {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .pagination-link {
+    background: rgba(22, 27, 34, 0.8) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 输入框优化 */
+:not([data-theme="dark"]) input,
+:not([data-theme="dark"]) textarea {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+    background: rgba(22, 27, 34, 0.8) !important;
+    border: 1px solid rgba(48, 54, 61, 0.6) !important;
+    color: #c9d1d9 !important;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+:not([data-theme="dark"]) ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: rgba(22, 27, 34, 0.5);
+}
+
+:not([data-theme="dark"]) ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: rgba(48, 54, 61, 0.8);
+    border-radius: 5px;
+}
+
+/* 动画优化 */
+* {
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease !important;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    :not([data-theme="dark"]) .card,
+    :not([data-theme="dark"]) .widget,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .widget {
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+}
+
+/* 降级方案（不支持 backdrop-filter） */
+@supports not (backdrop-filter: blur(10px)) {
+    :not([data-theme="dark"]) .card,
+    :not([data-theme="dark"]) .widget {
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .widget {
+        background: rgba(22, 27, 34, 0.95) !important;
+    }
+}

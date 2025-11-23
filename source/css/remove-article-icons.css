@@ -1,0 +1,57 @@
+/* ==========================================
+   删除文章卡片多余的矢量图标
+   ========================================== */
+
+/* 删除文章卡片右上角的图标 */
+article .card-content > a:has(svg):not(.level-item a),
+article .card-content svg:not(.level-item svg):not(.code-copy-btn svg),
+.article .card-content > a:has(svg),
+.article-meta svg:not(.level-item svg),
+.card-content > a[href*="github"]:not(.level-item a),
+.card-content > a[href*="link"]:not(.level-item a),
+.post-meta svg,
+.article-entry svg:not(pre svg):not(.code-copy-btn svg) {
+    display: none !important;
+}
+
+/* 只保留level容器内的社交图标 */
+.card .level .level-item a svg {
+    display: inline-block !important;
+}
+
+/* 删除文章标题附近的图标 */
+.card-content > .media + a svg,
+.card-content > h1 + a svg,
+.card-content > h2 + a svg,
+.card-content > .title + a svg {
+    display: none !important;
+}
+
+/* 删除分类、标签附近的图标 */
+.card-content .tag svg,
+.card-content .category svg,
+.article-meta a:not(.level-item a) svg {
+    display: none !important;
+}
+
+/* 删除"阅读更多"链接的图标 */
+a:contains("阅读更多") svg,
+a:contains("Read more") svg,
+.read-more svg {
+    display: none !important;
+}
+
+/* 文章卡片顶部链接图标删除 */
+.card-content > p:first-child a svg,
+.card-content > div:first-child a svg {
+    display: none !important;
+}
+
+/* 确保代码复制按钮和导航按钮的图标保留 */
+.code-copy-btn svg,
+.navbar-toggle svg,
+.navbar-toggle-icon,
+.dark-mode-toggle svg,
+button svg {
+    display: inline-block !important;
+}

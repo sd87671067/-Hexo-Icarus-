@@ -1,0 +1,259 @@
+/* ==========================================
+   自动夜间模式样式
+   ========================================== */
+
+/* 定义变量 */
+:root {
+    /* 日间模式颜色 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-hover: #f1f3f5;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-title: #343a40;
+    --border-color: #dee2e6;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --link-color: #007bff;
+    --code-bg: #f8f9fa;
+}
+
+/* 夜间模式变量 */
+[data-theme="dark"] {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2128;
+    --bg-hover: #262c36;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-title: #f0f6fc;
+    --border-color: #30363d;
+    --shadow: 0 2px 10px rgba(0,0,0,0.4);
+    --link-color: #58a6ff;
+    --code-bg: #161b22;
+}
+
+/* 平滑过渡 */
+* {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease !important;
+}
+
+/* 主体背景 */
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 导航栏 */
+.navbar {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.navbar-item,
+.navbar-link {
+    color: var(--text-primary) !important;
+}
+
+.navbar-item:hover,
+.navbar-link:hover {
+    background-color: var(--bg-hover) !important;
+    color: var(--link-color) !important;
+}
+
+/* 卡片 */
+.card,
+.widget,
+.article {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.card-content,
+.widget-body {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 文章 */
+.article-title,
+.title {
+    color: var(--text-title) !important;
+}
+
+.article-meta,
+.article-tag,
+.article-category {
+    color: var(--text-secondary) !important;
+}
+
+.article-entry {
+    color: var(--text-primary) !important;
+}
+
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+    color: var(--text-title) !important;
+}
+
+/* 链接 */
+a {
+    color: var(--link-color) !important;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* 按钮 */
+.button {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.button:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+/* 标签 */
+.tag {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* 页脚 */
+.footer {
+    background-color: var(--bg-secondary) !important;
+    border-top: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* 侧边栏 */
+.sidebar .widget {
+    background-color: var(--bg-card) !important;
+}
+
+/* 搜索框 */
+.searchbox input {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* 分页 */
+.pagination-link,
+.pagination-ellipsis,
+.pagination-previous,
+.pagination-next {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.pagination-link:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+/* 代码块（继承之前的深色样式） */
+[data-theme="dark"] pre,
+[data-theme="dark"] code {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+/* 表格 */
+table {
+    background-color: var(--bg-card) !important;
+}
+
+th {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-title) !important;
+}
+
+td {
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 引用 */
+blockquote {
+    background-color: var(--bg-secondary) !important;
+    border-left: 4px solid var(--link-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* 切换按钮样式 */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* 自动模式指示器 */
+.auto-mode-indicator {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.auto-mode-indicator.show {
+    opacity: 1;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .auto-mode-indicator {
+        bottom: 75px;
+        right: 20px;
+    }
+}

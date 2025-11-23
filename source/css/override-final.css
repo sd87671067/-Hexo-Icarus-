@@ -1,0 +1,24 @@
+/* 最终覆盖样式 */
+
+/* 强制无阴影 */
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+pre, code, .highlight {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+}
+
+/* 隐藏访客记录 */
+*:contains("访客") {
+    display: none !important;
+}
+
+/* 确保统计图标显示 */
+.level-item > div > p:first-child {
+    font-size: 24px !important;
+    margin-bottom: 8px !important;
+}

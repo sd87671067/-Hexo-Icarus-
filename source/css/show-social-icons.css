@@ -1,0 +1,68 @@
+/* ==========================================
+   显示社交图标
+   ========================================== */
+
+/* 确保社交图标显示 */
+.card .level-item a svg,
+.card .level .level-item:has(a[href*="github"]) svg,
+.card .level .level-item:has(a[href*="mailto"]) svg,
+.card .level .level-item:has(a[href*="t.me"]) svg,
+.card .level .level-item:has(a[href*="telegram"]) svg {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    fill: currentColor !important;
+}
+
+/* 社交图标容器 */
+.card .level-item a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    color: #667eea !important;
+    transition: all 0.3s ease !important;
+}
+
+.card .level-item a:hover {
+    background: rgba(102, 126, 234, 0.2) !important;
+    transform: translateY(-3px) scale(1.1) !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .card .level-item a {
+    background: rgba(88, 166, 255, 0.15) !important;
+    color: #58a6ff !important;
+}
+
+[data-theme="dark"] .card .level-item a:hover {
+    background: rgba(88, 166, 255, 0.25) !important;
+}
+
+/* 只隐藏非社交链接的图标 */
+.card .level-item:not(:has(a)) svg,
+.card .level-item:not(:has(a[href*="github"])):not(:has(a[href*="mailto"])):not(:has(a[href*="t.me"])):not(:has(a[href*="telegram"])) svg {
+    display: none !important;
+}
+
+/* 统计数字样式 */
+.card .level-item:not(:has(a)) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.card .level-item:not(:has(a)) > span:first-child {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin-bottom: 4px !important;
+}
+
+.card .level-item:not(:has(a)) > span:last-child {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}

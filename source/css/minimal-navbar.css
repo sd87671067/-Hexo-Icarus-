@@ -1,0 +1,143 @@
+/* ==========================================
+   极简导航栏 - 只保留按钮
+   ========================================== */
+
+/* 导航栏完全透明，无背景 */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* 滚动时隐藏 */
+.navbar.scrolled {
+    transform: translateY(-80px) !important;
+}
+
+/* 只显示导航按钮 */
+.navbar-toggle {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    pointer-events: auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    z-index: 10001 !important;
+}
+
+.navbar-toggle:hover {
+    background: white !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.navbar-toggle:active {
+    transform: scale(0.95) !important;
+}
+
+/* 汉堡图标 */
+.navbar-toggle-icon {
+    width: 20px !important;
+    height: 16px !important;
+    position: relative !important;
+    display: block !important;
+}
+
+.navbar-toggle-icon span {
+    display: block !important;
+    position: absolute !important;
+    height: 2px !important;
+    width: 100% !important;
+    background: #333 !important;
+    border-radius: 1px !important;
+    opacity: 1 !important;
+    left: 0 !important;
+    transform: rotate(0deg) !important;
+    transition: all 0.2s ease !important;
+}
+
+.navbar-toggle-icon span:nth-child(1) {
+    top: 0px !important;
+}
+
+.navbar-toggle-icon span:nth-child(2) {
+    top: 7px !important;
+}
+
+.navbar-toggle-icon span:nth-child(3) {
+    top: 14px !important;
+}
+
+/* X状态 */
+.navbar-toggle.active .navbar-toggle-icon span:nth-child(1) {
+    top: 7px !important;
+    transform: rotate(135deg) !important;
+}
+
+.navbar-toggle.active .navbar-toggle-icon span:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.navbar-toggle.active .navbar-toggle-icon span:nth-child(3) {
+    top: 7px !important;
+    transform: rotate(-135deg) !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .navbar-toggle {
+    background: rgba(22, 27, 34, 0.95) !important;
+    border-color: rgba(48, 54, 61, 0.5) !important;
+}
+
+[data-theme="dark"] .navbar-toggle-icon span {
+    background: #e6edf3 !important;
+}
+
+/* 下拉菜单保持不变 */
+.navbar-dropdown {
+    position: fixed !important;
+    top: 60px !important;
+    left: 12px !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    padding: 8px !important;
+    opacity: 0 !important;
+    transform: scale(0.9) translateY(-10px) !important;
+    pointer-events: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 9999 !important;
+    min-width: 180px !important;
+}
+
+.navbar-dropdown.active {
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* 页面内容不需要偏移 */
+body {
+    padding-top: 0 !important;
+}

@@ -1,0 +1,72 @@
+/* ==========================================
+   代码复制按钮样式
+   ========================================== */
+
+/* 复制按钮基础样式 */
+.code-copy-btn {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    padding: 6px 12px !important;
+    background: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #24292f !important;
+    cursor: pointer !important;
+    opacity: 0 !important;
+    transition: all 0.2s ease !important;
+    z-index: 10 !important;
+    user-select: none !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+
+/* 代码块悬停时显示按钮 */
+pre:hover .code-copy-btn {
+    opacity: 1 !important;
+}
+
+/* 按钮悬停效果 */
+.code-copy-btn:hover {
+    background: #eaeef2 !important;
+    border-color: #afb8c1 !important;
+}
+
+/* 按钮点击效果 */
+.code-copy-btn:active {
+    background: #d0d7de !important;
+    transform: scale(0.95) !important;
+}
+
+/* 夜间模式按钮样式 */
+[data-theme="dark"] .code-copy-btn {
+    background: #21262d !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .code-copy-btn:hover {
+    background: #30363d !important;
+    border-color: #484f58 !important;
+}
+
+[data-theme="dark"] .code-copy-btn:active {
+    background: #161b22 !important;
+}
+
+/* 确保按钮在所有代码块上都能显示 */
+pre,
+.highlight pre,
+figure.highlight pre {
+    position: relative !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .code-copy-btn {
+        opacity: 1 !important;
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+}

@@ -1,0 +1,155 @@
+/* ==========================================
+   纯CSS添加矢量图标 - 不修改JSX
+   ========================================== */
+
+/* 统计卡片图标 - 使用CSS伪元素 */
+.widget .level-item:has(.heading) {
+    position: relative;
+}
+
+.widget .level-item .heading {
+    display: block;
+    margin-top: 32px;
+}
+
+/* 文章图标 */
+.widget .level-item:has(.heading:contains("文章"))::before,
+.widget .level-item:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23667eea"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8" stroke="white" stroke-width="1" fill="none"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 分类图标 */
+.widget .level-item:has(.heading:contains("分类"))::before,
+.widget .level-item:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23667eea"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 标签图标 */
+.widget .level-item:has(.heading:contains("标签"))::before,
+.widget .level-item:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23667eea"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="6.5" cy="6.5" r="1.5" fill="white"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 夜间模式图标颜色 */
+[data-theme="dark"] .widget .level-item::before {
+    filter: brightness(1.2);
+}
+
+/* 页脚社交图标 */
+.footer .level-item {
+    position: relative;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+/* GitHub图标 */
+.footer .level-item:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.footer .level-item:nth-child(1):hover::after {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Email图标 */
+.footer .level-item:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.footer .level-item:nth-child(2):hover::after {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Telegram图标 */
+.footer .level-item:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.footer .level-item:nth-child(3):hover::after {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* 夜间模式页脚图标 */
+[data-theme="dark"] .footer .level-item::after {
+    filter: brightness(1.5) !important;
+}
+
+/* 隐藏原有的文字或空链接 */
+.footer .level-item a {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* 确保图标容器有足够空间 */
+.footer .level {
+    padding: 20px 0;
+}
+
+.footer .level-left {
+    gap: 20px;
+}
+
+/* 访客统计隐藏 */
+.footer *:contains("访客"),
+.footer .busuanzi,
+#busuanzi_container_site_uv,
+#busuanzi_container_site_pv {
+    display: none !important;
+}

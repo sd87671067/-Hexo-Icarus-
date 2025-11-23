@@ -1,0 +1,288 @@
+/* ==========================================
+   夜间模式增强 - 代码块黑化 + 文字增亮
+   ========================================== */
+
+/* ========== 代码块黑化 ========== */
+
+/* 代码块容器 - 强制黑色背景 */
+[data-theme="dark"] pre,
+[data-theme="dark"] pre[class*="language-"],
+[data-theme="dark"] .highlight,
+[data-theme="dark"] .code-block,
+[data-theme="dark"] .highlight pre,
+[data-theme="dark"] div.highlight,
+[data-theme="dark"] figure.highlight {
+    background: #000000 !important;
+    background-color: #000000 !important;
+}
+
+/* 代码块包裹层 */
+[data-theme="dark"] .highlight {
+    background: #000000 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+}
+
+/* 代码文字区域 */
+[data-theme="dark"] pre code,
+[data-theme="dark"] .highlight code,
+[data-theme="dark"] code[class*="language-"] {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    color: #e6edf3 !important;
+}
+
+/* 行内代码 - 深灰背景 */
+[data-theme="dark"] code {
+    background: #161b22 !important;
+    color: #f0f6fc !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    border: 1px solid #30363d !important;
+}
+
+/* 行内代码在代码块中 - 保持黑色 */
+[data-theme="dark"] pre code {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* 代码行号区域 */
+[data-theme="dark"] .gutter,
+[data-theme="dark"] .line-numbers {
+    background: #0d1117 !important;
+    border-right: 1px solid #30363d !important;
+    color: #6e7681 !important;
+}
+
+/* 代码高亮颜色 */
+[data-theme="dark"] .token.comment,
+[data-theme="dark"] .token.prolog,
+[data-theme="dark"] .token.doctype,
+[data-theme="dark"] .token.cdata {
+    color: #8b949e !important;
+    font-style: italic !important;
+}
+
+[data-theme="dark"] .token.keyword,
+[data-theme="dark"] .token.tag,
+[data-theme="dark"] .token.boolean,
+[data-theme="dark"] .token.constant,
+[data-theme="dark"] .token.deleted {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .token.string,
+[data-theme="dark"] .token.attr-value,
+[data-theme="dark"] .token.char,
+[data-theme="dark"] .token.inserted {
+    color: #a5d6ff !important;
+}
+
+[data-theme="dark"] .token.function,
+[data-theme="dark"] .token.class-name {
+    color: #d2a8ff !important;
+}
+
+[data-theme="dark"] .token.number {
+    color: #79c0ff !important;
+}
+
+[data-theme="dark"] .token.operator,
+[data-theme="dark"] .token.entity,
+[data-theme="dark"] .token.url {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .token.selector,
+[data-theme="dark"] .token.attr-name,
+[data-theme="dark"] .token.property {
+    color: #7ee787 !important;
+}
+
+/* ========== 文字增亮 ========== */
+
+/* 主体文字 - 提高亮度 */
+[data-theme="dark"] body {
+    background: #0d1117 !important;
+    color: #e6edf3 !important;
+}
+
+/* 段落文字 - 更亮的灰色 */
+[data-theme="dark"] p,
+[data-theme="dark"] .content,
+[data-theme="dark"] .card-content,
+[data-theme="dark"] div {
+    color: #e6edf3 !important;
+}
+
+/* 文章段落 - 特别增亮 */
+[data-theme="dark"] .post p,
+[data-theme="dark"] body.post p,
+[data-theme="dark"] article p {
+    color: #e6edf3 !important;
+}
+
+/* 列表文字 */
+[data-theme="dark"] li,
+[data-theme="dark"] .post li,
+[data-theme="dark"] body.post li {
+    color: #e6edf3 !important;
+}
+
+/* 标题 - 纯白色 */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* 文章标题特别强调 */
+[data-theme="dark"] .post h1,
+[data-theme="dark"] body.post h1,
+[data-theme="dark"] article h1 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+[data-theme="dark"] .post h2,
+[data-theme="dark"] body.post h2 {
+    color: #f0f6fc !important;
+    border-bottom-color: #30363d !important;
+}
+
+[data-theme="dark"] .post h3,
+[data-theme="dark"] body.post h3 {
+    color: #f0f6fc !important;
+}
+
+/* 链接 - 明亮蓝色 */
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+}
+
+[data-theme="dark"] a:hover {
+    color: #79c0ff !important;
+}
+
+/* 引用块 - 提亮 */
+[data-theme="dark"] .post blockquote,
+[data-theme="dark"] body.post blockquote,
+[data-theme="dark"] blockquote {
+    background: #161b22 !important;
+    border-left-color: #58a6ff !important;
+    color: #c9d1d9 !important;
+}
+
+/* 卡片背景和边框 */
+[data-theme="dark"] .card {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+/* 卡片内容文字 */
+[data-theme="dark"] .card-content p,
+[data-theme="dark"] .card-content div {
+    color: #e6edf3 !important;
+}
+
+/* 元信息文字 */
+[data-theme="dark"] .meta,
+[data-theme="dark"] .article-meta,
+[data-theme="dark"] time {
+    color: #8b949e !important;
+}
+
+/* 表格 */
+[data-theme="dark"] table {
+    border-color: #30363d !important;
+}
+
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+[data-theme="dark"] thead {
+    background: #161b22 !important;
+}
+
+/* 输入框 */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+/* 按钮 */
+[data-theme="dark"] .button {
+    background: #21262d !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+
+/* 社交卡片 */
+[data-theme="dark"] .social-card {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .social-link {
+    background: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+/* 页脚 */
+[data-theme="dark"] .footer {
+    background: #0d1117 !important;
+    border-top: 1px solid #30363d !important;
+    color: #8b949e !important;
+}
+
+/* 滚动条美化 */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #0d1117 !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #30363d !important;
+    border-radius: 6px !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #484f58 !important;
+}
+
+/* 选中文字 */
+[data-theme="dark"] ::selection {
+    background: #1f6feb !important;
+    color: #ffffff !important;
+}
+
+/* 分隔线 */
+[data-theme="dark"] hr {
+    border-color: #30363d !important;
+}
+
+/* 标签 */
+[data-theme="dark"] .tag {
+    background: #21262d !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}

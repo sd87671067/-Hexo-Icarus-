@@ -1,0 +1,64 @@
+/* ==========================================
+   恢复页脚三个图标 & 删除关注我按钮
+   ========================================== */
+
+/* 确保底部图标显示 */
+.footer .level-item .icon,
+.footer .level-item svg,
+.footer .level-item .fab,
+.footer .level-item .fas,
+.footer .level-item .far,
+.footer .level-item a[href*="github"] svg,
+.footer .level-item a[href*="mailto"] svg,
+.footer .level-item a[href*="telegram"] svg,
+.footer .level-item a[href*="github"] .icon,
+.footer .level-item a[href*="mailto"] .icon,
+.footer .level-item a[href*="telegram"] .icon {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* 页脚图标样式 */
+.footer .level-item a {
+    color: #666 !important;
+    transition: color 0.3s ease !important;
+}
+
+.footer .level-item a:hover {
+    color: #667eea !important;
+}
+
+/* 夜间模式页脚图标 */
+[data-theme="dark"] .footer .level-item a {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .footer .level-item a:hover {
+    color: #58a6ff !important;
+}
+
+/* 删除"关注我"按钮 */
+.card-content .button:contains("关注我"),
+.card-content a.button[href*="follow"],
+.widget .button:contains("关注我"),
+button:contains("关注我") {
+    display: none !important;
+}
+
+/* 确保统计数据的图标不被隐藏 */
+.level-item:has(.heading) .icon {
+    display: none !important;
+}
+
+/* 保留底部社交图标容器 */
+.footer .level {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.footer .level-item {
+    margin: 0 1rem !important;
+}

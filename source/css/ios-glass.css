@@ -1,0 +1,170 @@
+/* iOS 毛玻璃效果 - 卡片版 */
+
+/* 背景渐变 */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* 毛玻璃导航栏 */
+.navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* 毛玻璃卡片 */
+.card,
+.widget,
+article.card,
+article.media {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 卡片悬停效果 */
+.card:hover,
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.45) !important;
+}
+
+/* 卡片内文字颜色 */
+.card .title,
+.card h2,
+.card h3 {
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card p,
+.card .content {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.card a {
+    color: white !important;
+    opacity: 0.95;
+}
+
+.card a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* 标签样式 */
+.card .tag {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 阅读更多按钮 */
+.card .button,
+.card .readmore {
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.card .button:hover,
+.card .readmore:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* 夜间模式切换按钮 */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+/* 夜间模式样式 */
+[data-theme="dark"] body {
+    background: #0a0e1a !important;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(13, 17, 23, 0.95) !important;
+    border-bottom: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .widget {
+    background: rgba(22, 27, 34, 0.95) !important;
+    border: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .card .title,
+[data-theme="dark"] .card h2,
+[data-theme="dark"] .card h3,
+[data-theme="dark"] .card p,
+[data-theme="dark"] .card .content {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .card a {
+    color: #58a6ff !important;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0a0e1a 100%);
+    border-color: #58a6ff;
+}
+
+/* 确保内容容器正确显示 */
+.container {
+    padding: 1rem;
+}
+
+/* 主内容区域 */
+.main {
+    min-height: 70vh;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .card {
+        margin: 0.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .theme-toggle {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

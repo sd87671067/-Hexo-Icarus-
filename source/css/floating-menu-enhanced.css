@@ -1,0 +1,108 @@
+/* ==========================================
+   浮动菜单增强样式
+   ========================================== */
+
+/* 浮动按钮 - 增强点击区域 */
+.floating-menu-btn {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    cursor: pointer !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+    user-select: none !important;
+}
+
+/* 确保按钮可点击 */
+.floating-menu-btn * {
+    pointer-events: none !important;
+}
+
+/* 隐藏状态 */
+.floating-menu-btn.hidden {
+    opacity: 0 !important;
+    transform: translateY(-100px) !important;
+    pointer-events: none !important;
+}
+
+/* 悬停效果 */
+.floating-menu-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 点击效果 */
+.floating-menu-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* 按钮图标 */
+.floating-menu-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    stroke: white !important;
+    fill: none !important;
+    transition: transform 0.3s !important;
+}
+
+/* 激活状态 */
+.floating-menu-btn.active svg {
+    transform: rotate(45deg) !important;
+}
+
+/* 浮动菜单 */
+.floating-menu {
+    position: fixed !important;
+    top: 80px !important;
+    left: 20px !important;
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    padding: 10px !important;
+    z-index: 9999 !important;
+    opacity: 0 !important;
+    transform: scale(0.8) translateY(-20px) !important;
+    pointer-events: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    min-width: 200px !important;
+}
+
+/* 菜单激活 */
+.floating-menu.active {
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .floating-menu-btn {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border: 2px solid rgba(88, 166, 255, 0.6) !important;
+}
+
+[data-theme="dark"] .floating-menu {
+    background: #161b22 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .floating-menu-item {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .floating-menu-item:hover {
+    background: #21262d !important;
+}

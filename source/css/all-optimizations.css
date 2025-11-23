@@ -1,0 +1,156 @@
+/* ==========================================
+   完整优化样式 - 合并版
+   ========================================== */
+
+/* 全局变量 */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --dark-bg: #0a0e1a;
+    --dark-nav: #0d1117;
+    --dark-card: #161b22;
+    --dark-border: #30363d;
+}
+
+/* 白天模式背景 */
+body:not([data-theme="dark"]) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+}
+
+/* 夜间模式背景 */
+[data-theme="dark"] body {
+    background: #0a0e1a !important;
+    color: #c9d1d9 !important;
+}
+
+/* 白天模式导航栏 */
+body:not([data-theme="dark"]) .navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 夜间模式导航栏 - 强制深色 */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar,
+[data-theme="dark"] .navbar.is-white,
+[data-theme="dark"] .navbar.is-light,
+[data-theme="dark"] .navbar.is-transparent {
+    background: #0d1117 !important;
+    background-color: #0d1117 !important;
+    border-bottom: 1px solid #21262d !important;
+}
+
+[data-theme="dark"] .navbar-item,
+[data-theme="dark"] .navbar-link {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .navbar-item:hover {
+    background: rgba(48, 54, 61, 0.5) !important;
+    color: #58a6ff !important;
+}
+
+/* 白天模式卡片 */
+body:not([data-theme="dark"]) .card,
+body:not([data-theme="dark"]) article {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 夜间模式卡片 */
+[data-theme="dark"] .card,
+[data-theme="dark"] article {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 卡片动画 */
+.card,
+article {
+    animation: fadeUp 0.6s ease-out;
+    transition: transform 0.3s ease !important;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover,
+article:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    border: 3px solid white !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999 !important;
+    transition: transform 0.3s ease !important;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: linear-gradient(135deg, #1a1f2e, #0a0e1a) !important;
+    border-color: #58a6ff !important;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(180deg) !important;
+}
+
+.theme-toggle svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: white !important;
+}
+
+/* 文字颜色 */
+body:not([data-theme="dark"]) h1,
+body:not([data-theme="dark"]) h2,
+body:not([data-theme="dark"]) h3,
+body:not([data-theme="dark"]) .title {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] .title {
+    color: #f0f6fc !important;
+}
+
+body:not([data-theme="dark"]) a {
+    color: white !important;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff !important;
+}

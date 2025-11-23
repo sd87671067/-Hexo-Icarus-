@@ -1,0 +1,90 @@
+/* ==========================================
+   自定义页脚 - 文字+跳动爱心
+   ========================================== */
+
+/* 删除页脚所有图标和默认内容 */
+.footer .level,
+.footer .level-item,
+.footer svg,
+.footer img,
+.footer a:has(svg) {
+    display: none !important;
+}
+
+/* 页脚容器 */
+.footer {
+    padding: 2rem 1rem !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* 自定义文字 */
+.footer::before {
+    content: '用技术压制负面情绪，后退一步研究市场' !important;
+    display: block !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 跳动的爱心 */
+.footer::after {
+    content: '❤️' !important;
+    display: block !important;
+    font-size: 24px !important;
+    animation: heartbeat 1.2s ease-in-out infinite !important;
+}
+
+/* 爱心跳动动画 */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10%, 30% {
+        transform: scale(0.9);
+    }
+    20%, 40%, 60%, 80% {
+        transform: scale(1.1);
+    }
+    50%, 70% {
+        transform: scale(1.05);
+    }
+}
+
+/* 夜间模式页脚 */
+[data-theme="dark"] .footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+/* 背景装饰 */
+.footer {
+    background-size: 400% 400% !important;
+    animation: gradientShift 15s ease infinite !important;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* 清理容器 */
+.footer .container {
+    max-width: 100% !important;
+}
+
+.footer > * {
+    display: none !important;
+}
+
+.footer::before,
+.footer::after {
+    display: block !important;
+}

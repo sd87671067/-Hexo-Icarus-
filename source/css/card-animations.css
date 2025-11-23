@@ -1,0 +1,126 @@
+/* ==========================================
+   卡片动画效果
+   ========================================== */
+
+/* 入场动画 */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 卡片基础动画 */
+.card,
+.widget,
+article.card,
+article.media {
+    animation: slideUp 0.6s ease-out backwards;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 延迟动画 */
+.card:nth-child(1),
+.widget:nth-child(1) { animation-delay: 0.1s; }
+
+.card:nth-child(2),
+.widget:nth-child(2) { animation-delay: 0.2s; }
+
+.card:nth-child(3),
+.widget:nth-child(3) { animation-delay: 0.3s; }
+
+.card:nth-child(4),
+.widget:nth-child(4) { animation-delay: 0.4s; }
+
+.card:nth-child(5),
+.widget:nth-child(5) { animation-delay: 0.5s; }
+
+/* 悬停效果 */
+.card:hover,
+.widget:hover,
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .widget:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 点击反馈 */
+.card:active,
+.widget:active {
+    transform: scale(0.98);
+}
+
+/* 链接悬停动画 */
+.card a,
+.widget a {
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.card a::after,
+.widget a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.card a:hover::after,
+.widget a:hover::after {
+    width: 100%;
+}
+
+/* 图片悬停效果 */
+.card img,
+.widget img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover img,
+.widget:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* 标签动画 */
+.tag {
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动显示动画 */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.scroll-reveal.revealed {
+    animation: slideUp 0.6s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+}

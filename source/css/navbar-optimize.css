@@ -1,0 +1,100 @@
+/* ==========================================
+   导航栏优化：减少空白 + 夜间模式修复
+   ========================================== */
+
+/* 导航栏基础样式 - 减少高度 */
+.navbar {
+    min-height: 3.25rem !important;  /* 标准高度 */
+    padding: 0 1rem !important;       /* 减少内边距 */
+    background: white !important;
+    transition: background 0.3s ease !important;
+}
+
+/* 夜间模式 - 导航栏背景 */
+[data-theme="dark"] .navbar {
+    background: #161b22 !important;  /* GitHub 深色背景 */
+    border-bottom: 1px solid #30363d !important;
+}
+
+/* 导航栏品牌区域 */
+.navbar-brand {
+    min-height: 3.25rem !important;
+    padding: 0 !important;
+}
+
+/* 导航栏菜单 */
+.navbar-menu {
+    padding: 0 !important;
+}
+
+/* 导航栏开始和结束部分 */
+.navbar-start,
+.navbar-end {
+    align-items: center !important;
+}
+
+/* 导航项 - 优化间距 */
+.navbar-item {
+    padding: 0.5rem 0.75rem !important;  /* 适中的内边距 */
+    color: #4a4a4a !important;
+    transition: all 0.2s ease !important;
+}
+
+/* 夜间模式 - 导航项颜色 */
+[data-theme="dark"] .navbar-item {
+    color: #e6edf3 !important;
+}
+
+/* 导航项悬停 */
+.navbar-item:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #3273dc !important;
+}
+
+[data-theme="dark"] .navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #58a6ff !important;
+}
+
+/* 导航链接 */
+.navbar-link {
+    color: #4a4a4a !important;
+}
+
+[data-theme="dark"] .navbar-link {
+    color: #e6edf3 !important;
+}
+
+/* 移动端汉堡按钮 */
+.navbar-burger {
+    height: 3.25rem !important;
+    width: 3.25rem !important;
+}
+
+/* 夜间模式 - 汉堡按钮 */
+[data-theme="dark"] .navbar-burger span {
+    background-color: #e6edf3 !important;
+}
+
+/* 移动端下拉菜单 */
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background: white !important;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    [data-theme="dark"] .navbar-menu {
+        background: #161b22 !important;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* 主容器顶部间距调整 */
+.section {
+    padding-top: 2rem !important;  /* 减少顶部间距 */
+}
+
+/* 第一个section特殊处理 */
+.section:first-of-type {
+    padding-top: 1.5rem !important;
+}

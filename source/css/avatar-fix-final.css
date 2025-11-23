@@ -1,0 +1,74 @@
+/* ==========================================
+   彻底移除头像占位符
+   ========================================== */
+
+/* 移除所有图片占位符和背景 */
+img,
+.avatar,
+.media img,
+.media-left,
+.image,
+figure img {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* 移除所有伪元素 */
+img::before,
+img::after,
+.avatar::before,
+.avatar::after,
+.media::before,
+.media::after,
+.image::before,
+.image::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* 图片直接显示，无动画 */
+img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* 移除延迟加载类 */
+img.lazy,
+img.lazyload,
+img.lazyloading,
+img[data-src],
+.lazy-image {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* 禁用占位符类 */
+.placeholder,
+.skeleton,
+.shimmer,
+.loading-placeholder,
+.image-placeholder {
+    display: none !important;
+}
+
+/* 确保头像立即显示 */
+.avatar img,
+.media img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 移除加载动画 */
+@keyframes shimmer { to { background-position: 0; } }
+@keyframes skeleton { to { opacity: 1; } }
+@keyframes pulse { to { opacity: 1; } }
+
+.shimmer,
+.skeleton,
+.pulse {
+    animation: none !important;
+}

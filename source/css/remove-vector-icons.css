@@ -1,0 +1,68 @@
+/* ==========================================
+   去除卡片内的矢量图标
+   ========================================== */
+
+/* 隐藏文章、分类、标签的矢量图标 */
+.card .icon,
+.card svg:not(.navbar-toggle-icon svg):not(.code-copy-btn svg),
+.widget .icon,
+.widget svg,
+.level-item svg:not(a svg),
+.tag svg,
+.category svg,
+article svg:not(pre svg):not(.code-copy-btn svg) {
+    display: none !important;
+}
+
+/* 文章统计区域 - 只显示文字 */
+.level-item .icon {
+    display: none !important;
+}
+
+.level-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.level-item > span:first-child {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin-bottom: 4px !important;
+}
+
+.level-item > span:last-child {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
+/* 标签样式优化 - 无图标 */
+.tag {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+    border-radius: 4px !important;
+    padding: 4px 12px !important;
+    font-size: 14px !important;
+    border: none !important;
+}
+
+.tag:hover {
+    background: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .tag {
+    background: #21262d !important;
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .tag:hover {
+    background: #30363d !important;
+}
+
+/* 确保复制按钮的SVG不被隐藏 */
+.code-copy-btn svg,
+.code-copy-btn *,
+button svg {
+    display: inline-block !important;
+}

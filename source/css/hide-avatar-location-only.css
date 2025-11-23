@@ -1,0 +1,76 @@
+/* ==========================================
+   只隐藏头像和定位信息 - 保留其他内容
+   ========================================== */
+
+/* 只隐藏头像图片和容器 */
+.card .media-left .image,
+.card .media-left img,
+.widget .media-left .image,
+.widget .media-left img,
+.profile .avatar,
+.profile img[src*="avatar"],
+img.avatar {
+    display: none !important;
+}
+
+/* 调整媒体内容布局 */
+.card .media-left:empty {
+    display: none !important;
+}
+
+.card .media-content {
+    margin-left: 0 !important;
+}
+
+/* 只隐藏包含"China"的定位段落 */
+.card-content > p:contains("China"):has(.fa-map-marker),
+.card-content > p:contains("China"):last-child {
+    display: none !important;
+}
+
+/* 隐藏定位图标 */
+.fa-map-marker,
+.fa-map-marker-alt {
+    display: none !important;
+}
+
+/* 只隐藏"简单就好"的段落 */
+.card-content > p:contains("简单就好"):only-of-type {
+    display: none !important;
+}
+
+/* 页脚头像隐藏 */
+.footer .avatar,
+.footer img[src*="avatar"],
+footer .avatar,
+footer img[src*="avatar"] {
+    display: none !important;
+}
+
+/* 确保其他内容显示正常 */
+.card,
+.card-content,
+.card-content h1,
+.card-content h2,
+.card-content h3,
+.card-content p:not(:contains("China")):not(:contains("简单就好")),
+.card-content .title,
+.card-content .subtitle,
+.card-content .content,
+.media-content,
+.level,
+.level-item,
+.tags,
+.tag {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 确保文章内容可见 */
+article,
+.article-content,
+.post-content {
+    display: block !important;
+    visibility: visible !important;
+}

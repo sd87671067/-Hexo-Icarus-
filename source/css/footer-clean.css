@@ -1,0 +1,65 @@
+/* ==========================================
+   页脚清理 - 移除头像和多余元素
+   ========================================== */
+
+/* 移除页脚中的所有头像和媒体元素 */
+.footer .level-item:has(.media),
+.footer .level-item:has(.avatar),
+.footer .level-item:has(img),
+.footer .media,
+.footer .media-left,
+.footer .media-content,
+.footer .avatar,
+.footer .image,
+.footer img,
+footer .level-item:has(.media),
+footer .level-item:has(.avatar),
+footer .level-item:has(img),
+footer .media,
+footer .avatar,
+footer .image,
+footer img {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 清理页脚布局 */
+.footer .level {
+    justify-content: center !important;
+}
+
+.footer .level-left,
+.footer .level-right {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.footer .level-item {
+    margin: 0.5rem !important;
+}
+
+/* 确保页脚文字居中 */
+.footer .container {
+    text-align: center !important;
+}
+
+/* 页脚样式优化 */
+.footer {
+    padding: 2rem 1.5rem !important;
+    background: #f5f5f5 !important;
+}
+
+[data-theme="dark"] .footer {
+    background: #1a1a1a !important;
+}
+
+/* 移除作者相关信息 */
+.footer .author,
+.footer .author-name,
+.footer [class*="author"] {
+    display: none !important;
+}

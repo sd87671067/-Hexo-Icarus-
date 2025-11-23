@@ -1,0 +1,114 @@
+/* ==========================================
+   优化卡片间距和删除China
+   ========================================== */
+
+/* 隐藏China文字 */
+.card-content p:contains("China"),
+.card-content span:contains("China"),
+.card-content div:contains("China"),
+p:has-text("China"):only-child,
+*:contains("China"):not(:has(*)) {
+    display: none !important;
+}
+
+/* 优化卡片间距 - 减少空白 */
+.card {
+    margin-bottom: 1.5rem !important;
+}
+
+.card-content {
+    padding: 1.5rem !important;
+}
+
+/* 减少"简单就好"卡片的空白区域 */
+.widget.card .card-content {
+    padding: 1rem !important;
+}
+
+/* 个人信息卡片优化 */
+.widget .card-content > *:first-child {
+    margin-top: 0 !important;
+}
+
+.widget .card-content > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* 标题和副标题间距优化 */
+.card-content .title {
+    margin-bottom: 0.5rem !important;
+}
+
+.card-content .subtitle {
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* 文章、分类、标签数字布局优化 */
+.level {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+.level-item {
+    padding: 0.5rem !important;
+}
+
+.level-item .heading {
+    margin-bottom: 0.25rem !important;
+}
+
+/* 按钮区域优化 */
+.card-content .button {
+    margin-top: 1rem !important;
+}
+
+/* 移除多余的间距 */
+.card-content p:empty,
+.card-content div:empty {
+    display: none !important;
+}
+
+/* 优化媒体内容间距 */
+.media + .content,
+.media + p {
+    margin-top: 0.75rem !important;
+}
+
+/* 紧凑布局 */
+.widget.card {
+    min-height: auto !important;
+}
+
+/* 确保内容紧凑 */
+.card-content > p {
+    margin: 0.5rem 0 !important;
+}
+
+.card-content > p:first-child {
+    margin-top: 0 !important;
+}
+
+.card-content > p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* 移除"唯见月寒日暖,来煎人寿"和China */
+.card-content p:contains("唯见月寒日暖"),
+.card-content p:contains("来煎人寿") {
+    display: none !important;
+}
+
+/* 分类列表紧凑 */
+.widget .menu-list a {
+    padding: 0.5em 0.75em !important;
+}
+
+/* 标签云紧凑 */
+.tags {
+    margin-bottom: -0.5rem !important;
+}
+
+.tags .tag {
+    margin-bottom: 0.5rem !important;
+}

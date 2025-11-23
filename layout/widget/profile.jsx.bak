@@ -1,0 +1,43 @@
+const { Component } = require('inferno');
+const { cacheComponent } = require('hexo-component-inferno/lib/util/cache');
+
+class Profile extends Component {
+    render() {
+        const { site, helper, config } = this.props;
+        const { url_for } = helper;
+        
+        // 获取统计数据
+        const postCount = site.posts ? site.posts.length : 0;
+        const categoryCount = site.categories ? site.categories.length : 0; 
+        const tagCount = site.tags ? site.tags.length : 0;
+        
+        return <div class="card widget" data-type="profile">
+            <div class="card-content">
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">文章</p>
+                            <p class="title">{postCount}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">分类</p>
+                            <p class="title">{categoryCount}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">标签</p>
+                            <p class="title">{tagCount}</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>;
+    }
+}
+
+module.exports = cacheComponent(Profile, 'widget.profile', props => {
+    return {};
+});

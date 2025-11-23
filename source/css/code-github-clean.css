@@ -1,0 +1,72 @@
+/* GitHub风格代码块 - 完全无阴影 */
+
+/* 清除所有默认样式 */
+pre, code, .highlight, figure.highlight, .hljs {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* 日间模式代码块 */
+pre,
+pre.highlight,
+figure.highlight pre,
+.highlight pre,
+.hljs {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    margin: 16px 0 !important;
+    overflow-x: auto !important;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    color: #24292f !important;
+}
+
+/* 夜间模式代码块 */
+[data-theme="dark"] pre,
+[data-theme="dark"] pre.highlight,
+[data-theme="dark"] figure.highlight pre,
+[data-theme="dark"] .highlight pre,
+[data-theme="dark"] .hljs {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+/* 行内代码 */
+:not(pre) > code {
+    background: rgba(175, 184, 193, 0.2) !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-size: 85% !important;
+    color: #0969da !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] :not(pre) > code {
+    background: rgba(110, 118, 129, 0.4) !important;
+    color: #7ee787 !important;
+}
+
+/* 语法高亮 - 日间 */
+.token.comment, .hljs-comment { color: #6e7781 !important; }
+.token.keyword, .hljs-keyword { color: #cf222e !important; }
+.token.string, .hljs-string { color: #0a3069 !important; }
+.token.function, .hljs-function { color: #8250df !important; }
+.token.number, .hljs-number { color: #0550ae !important; }
+
+/* 语法高亮 - 夜间 */
+[data-theme="dark"] .token.comment, 
+[data-theme="dark"] .hljs-comment { color: #8b949e !important; }
+[data-theme="dark"] .token.keyword,
+[data-theme="dark"] .hljs-keyword { color: #ff7b72 !important; }
+[data-theme="dark"] .token.string,
+[data-theme="dark"] .hljs-string { color: #a5d6ff !important; }
+[data-theme="dark"] .token.function,
+[data-theme="dark"] .hljs-function { color: #d2a8ff !important; }
+[data-theme="dark"] .token.number,
+[data-theme="dark"] .hljs-number { color: #79c0ff !important; }
